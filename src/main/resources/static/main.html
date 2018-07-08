@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<script src="js/main.js" charset="utf-8"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+   		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	</head>
+	<body background="image/bg.jpg">
+		<!--
+        	主显示界面
+        -->
+		<div class="main" id="main">
+			<!-- 登录状态和logo -->
+			<div class="main_top row" id="main_top">
+				<div class="loginState col-xs-3" id="loginState">
+					<a>未登录</a>
+					&nbsp;|&nbsp;
+					<a></a>
+				</div>
+				<div class="logoBox col-xs-1 col-xs-offset-8" id="logoBox">
+					<img src="image/logo.png" />
+					<h5>湘北团队</h5>
+				</div>
+			</div>
+			
+			<!-- 登录、搜索操作  -->
+			<div class="main_medium row" id="main_medium">
+				<div class="login_recommend_search col-xs-4 col-xs-offset-4" id="login_recommend_search">
+					<div class="toLogin" id="toLogin">
+						<button id="toLoginBtn" onclick="Login()">登录</button>
+					</div>
+					<div class="search" id="search">
+						<input id="searchTxt" placeholder="输入电影名" />
+						<button id="searchBtn">搜索</button>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 显示推荐电影 -->
+			<div class="main_bottom" id="main_bottom">
+				<div class="rec_refresh" id="rec_refresh">
+					<!-- 电影封面 -->
+					<div class="recommendDisplsy" id="recommend">
+						<div class="recommendMovie" id="movie1">
+							<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" />
+							<h5 id="movieName1">movie1</h5>
+						</div>
+						<div class="recommendMovie" id="movie2">
+							<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" />
+							<h5 id="movieName2">movie2</h5>
+						</div>
+						<div class="recommendMovie" id="movie3">
+							<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" />
+							<h5 id="movieName3">movie3</h5>
+						</div>
+						<div class="recommendMovie" id="movie4">
+							<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" />
+							<h5 id="movieName4">movie4</h5>
+						</div>
+					</div>
+					
+					<!-- 换一批 -->
+					<div class="refresh" id="refresh">
+						<button id="refreshBtn">换一批</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--
+        	登录、注册框
+        -->
+		<div class="loginScene" id="loginScene">
+			<div class="login_registerBox">
+				<!-- 标签页 -->
+				<div class="closeLogin" id="closeLogin">
+					<span class="glyphicon glyphicon-remove" id="closeBtn" style="font-size: 16px; color: indianred;" onclick="Close()"></span>
+				</div>
+				<ul class="nav nav-tabs">
+					<li class="active col-xs-6" id="loginLi"><a href="#login" data-toggle="tab">登录</a></li>
+					<li class="col-xs-6" id="registerLi"><a href="#register" data-toggle="tab">注册</a></li>
+				</ul>
+				<div class="tab-content">
+					<!-- 登录框 -->
+					<div class="tab-pane fade active in" id="login">
+						<form action="doLogin" method="post">
+							<div class="usernameBox input-group" id="loginNameBox">
+								<span class="glyphicon glyphicon-user" style="font-size: 16px;"></span>
+								<input id="loginName" placeholder="请输入用户名" />
+							</div>
+							<div class="passwdBox input-group" id="loginPasswdBox">
+								<span class="glyphicon glyphicon-lock" style="font-size: 16px;"></span>
+								<input id="loginPasswd" placeholder="请输入密码" />
+							</div>
+							<div class="btnBox" id="loginBtnBox">
+								<input value="登录" />
+							</div>
+						</form>
+					</div>
+					<!-- 注册框 -->
+					<div class="tab-pane fade" id="register">
+						<form action="doResgister" method="post">
+							<div class="usernameBox input-group" id="registerNameBox">
+								<span class="glyphicon glyphicon-user" style="font-size: 16px;"></span>
+								<input id="registerName" placeholder="请输入用户名" />
+							</div>
+							<div class="passwdBox input-group" id="registerPasswdBox">
+								<span class="glyphicon glyphicon-lock" style="font-size: 16px;"></span>
+								<input id="registerPasswd" placeholder="请输入密码" />
+							</div>
+							<div class="resurePasswdBox input-group" id="resurePasswdBox">
+								<span class="glyphicon glyphicon-lock" style="font-size: 16px;"></span>
+								<input id="registerPasswd" placeholder="确认密码" />
+							</div>
+							<div class="btnBox" id="registerBtnBox">
+								<input value="注册" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
