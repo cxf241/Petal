@@ -29,26 +29,26 @@ public class LogController {
             //设置当前用户
             session.setAttribute("currentUser",user);
             //跳转到主界面
-            response.sendRedirect("/pages/index.html");
+            response.sendRedirect("/main.html");
         }
     }
 
     //用户注册
     @RequestMapping(value = "doRegister",method = RequestMethod.POST)
-    public String register(HttpServletRequest request, HttpServletResponse response) throws Exception{
+    public void register(HttpServletRequest request, HttpServletResponse response) throws Exception{
         //可能有乱码问题
         User user = new User();
         user.setUname(request.getParameter("uname"));
         user.setUpwd(request.getParameter("upwd"));
 
         if (userService.findUser(user)) {//用户已存在
-            return "username exists";
+            System.out.println("username exists");
         }else {
             if (userService.registerUser(user)) {//注册成功
                 //跳转到登陆界面
-                response.sendRedirect("/pages/login.html");
+                response.sendRedirect("/main.html");
             }
-            return "failed";
+
         }
     }
 
@@ -56,7 +56,7 @@ public class LogController {
     @RequestMapping(value = "doLogout")
     public void logout(HttpServletRequest request, HttpServletResponse response) throws Exception{
         request.getSession().setAttribute("currentUser", null);
-        response.sendRedirect("/pages/index.html");
+        response.sendRedirect("/main.html");
     }
 
     //返回当前用户

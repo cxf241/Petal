@@ -7,9 +7,35 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 		<script src="js/main.js" charset="utf-8"></script>
-		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 		<script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-   		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script>
+            $(document).ready(function () {
+                $.get("/user", function (data, status) {
+                    if (data.uname !== undefined)
+                    	$("#loginState").html("<a>欢迎" + data.uname + "</a><br><a href='/doLogout'>注销</a>")
+                })
+            })
+		</script>
+		<script>
+			function check() {
+			    var name = document.getElementById("registerName");
+                var pwd1 = document.getElementById("registerPasswd");
+                var pwd2 = document.getElementById("registerPasswd2");
+                console.log(name.value);
+                if (name.value == "" || pwd1.value == "" || pwd2.value == "") {
+                    alert("请输入完整信息！");
+                    return false;
+				}
+				if (pwd1.value != pwd2.value) {
+                    alert("两次密码不一致");
+                    pwd1.value = "";
+                    pwd2.value = "";
+                    return false;
+				}
+			}
+
+		</script>
 	</head>
 	<body background="image/bg.jpg">
 		<!--
@@ -72,7 +98,6 @@
 				</div>
 			</div>
 		</div>
-		
 		<!--
         	登录、注册框
         -->
@@ -89,37 +114,37 @@
 				<div class="tab-content">
 					<!-- 登录框 -->
 					<div class="tab-pane fade active in" id="login">
-						<form action="doLogin" method="post">
+						<form action="/doLogin" method="post">
 							<div class="usernameBox input-group" id="loginNameBox">
 								<span class="glyphicon glyphicon-user" style="font-size: 16px;"></span>
-								<input id="loginName" placeholder="请输入用户名" />
+								<input type="text" id="loginName" placeholder="请输入用户名" name="uname"/>
 							</div>
 							<div class="passwdBox input-group" id="loginPasswdBox">
 								<span class="glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input id="loginPasswd" placeholder="请输入密码" />
+								<input type="password" id="loginPasswd" placeholder="请输入密码" name="upwd"/>
 							</div>
 							<div class="btnBox" id="loginBtnBox">
-								<input value="登录" />
+								<input type="submit" value="登录" />
 							</div>
 						</form>
 					</div>
 					<!-- 注册框 -->
 					<div class="tab-pane fade" id="register">
-						<form action="doResgister" method="post">
+						<form action="doRegister" method="post">
 							<div class="usernameBox input-group" id="registerNameBox">
 								<span class="glyphicon glyphicon-user" style="font-size: 16px;"></span>
-								<input id="registerName" placeholder="请输入用户名" />
+								<input type="text" id="registerName" name="uname" placeholder="请输入用户名" />
 							</div>
 							<div class="passwdBox input-group" id="registerPasswdBox">
 								<span class="glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input id="registerPasswd" placeholder="请输入密码" />
+								<input type="password" id="registerPasswd" name="upwd" placeholder="请输入密码" />
 							</div>
 							<div class="resurePasswdBox input-group" id="resurePasswdBox">
 								<span class="glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input id="registerPasswd" placeholder="确认密码" />
+								<input type="password" id="registerPasswd2" placeholder="确认密码" />
 							</div>
 							<div class="btnBox" id="registerBtnBox">
-								<input value="注册" />
+								<input type="submit" value="注册"/>
 							</div>
 						</form>
 					</div>
