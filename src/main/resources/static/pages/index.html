@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.get("/user",function(data,status){
+                if (data.uname !== undefined)
+                    $("div").html("<h1>" + data.uname + "</h1>" + "<br><a href='/doLogout'>logout</a>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <a href="login.html">login</a>
+    </div>
+</body>
+</html>
