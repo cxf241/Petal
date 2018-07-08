@@ -91,6 +91,10 @@ body {
 	text-align: center;
 }
 
+.main .main_medium .login_recommend_search .search #searchTxt{
+	width: 200px;
+}
+
 .main .main_bottom {
 	position: relative;
 	margin: 0 auto;
@@ -114,7 +118,7 @@ body {
 
 .main .main_bottom .rec_refresh .recommendDisplsy .recommendMovie {
 	position: relative;
-	margin: 0;
+	margin: 5px;
 	width: 25%;
 	height: 100%;
 }
@@ -134,7 +138,6 @@ body {
 .main .main_bottom .rec_refresh .refresh {
 	position: relative;
 	margin: 0;
-	top: 10px;
 	text-align: center;
 }
 
@@ -178,11 +181,12 @@ body {
 	position: relative;
 	margin: 0 auto;
 	padding: 0;
+	width: 60%;
 	text-align: center;
 }
 
-.loginScene .login_registerBox form > div > span {
-	top: 3px;
+.loginScene .login_registerBox form > div span {
+	top: 0;
 }
 
 .loginScene .login_registerBox form > #loginNameBox {
