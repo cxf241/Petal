@@ -112,32 +112,151 @@ body {
 
 .main .main_bottom .rec_refresh .recommendDisplsy {
 	position: relative;
-	height: 80%;
+	height: 360px;
+	width: 100%;
 	display: flex;
 }
 
-.main .main_bottom .rec_refresh .recommendDisplsy .recommendMovie {
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper1 {
 	position: relative;
-	margin: 5px;
+	display: flex;
 	width: 25%;
 	height: 100%;
 }
 
-.main .main_bottom .rec_refresh .recommendDisplsy .recommendMovie img {
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper1 .recommendDisplsyPart1 {
 	position: relative;
-	margin: 0;
+	margin: 0px;
 	width: 100%;
-	height: 300px;
-	border: 1px solid black;
+	height: 100%;
+	left: -59px;
 }
 
-.main .main_bottom .rec_refresh .recommendDisplsy .recommendMovie h5 {
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper1 .recommendDisplsyPart1 .recommendMovie {
+	/*position: relative;*/
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper1 .recommendDisplsyPart1 .recommendMovie img {
+	/*position: relative;*/
+	margin: 0;
+	width: 222px;
+	height: 296px;
+	border: 4px solid black;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper1 .recommendDisplsyPart1 .recommendMovie h5 {
 	text-align: center;
 }
 
-.main .main_bottom .rec_refresh .refresh {
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper2 {
+	position: relative;
+	display: flex;
+	width: 25%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper2 .recommendDisplsyPart2 {
+	position: relative;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	left: -59px;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper2 .recommendDisplsyPart2 .recommendMovie {
+	position: relative;
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper2 .recommendDisplsyPart2 .recommendMovie img {
 	position: relative;
 	margin: 0;
+	width: 222px;
+	height: 296px;
+	border: 4px solid black;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper2 .recommendDisplsyPart2 .recommendMovie h5 {
+	text-align: center;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper3 {
+	position: relative;
+	display: flex;
+	width: 25%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper3 .recommendDisplsyPart3 {
+	position: relative;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	left: -59px;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper3 .recommendDisplsyPart3 .recommendMovie {
+	position: relative;
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper3 .recommendDisplsyPart3 .recommendMovie img {
+	position: relative;
+	margin: 0;
+	width: 222px;
+	height: 296px;
+	border: 4px solid black;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper3 .recommendDisplsyPart3 .recommendMovie h5 {
+	text-align: center;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper4 {
+	position: relative;
+	display: flex;
+	width: 25%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper4 .recommendDisplsyPart4 {
+	position: relative;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	left: -59px;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper4 .recommendDisplsyPart4 .recommendMovie {
+	position: relative;
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper4 .recommendDisplsyPart4 .recommendMovie img {
+	position: relative;
+	margin: 0;
+	width: 222px;
+	height: 296px;
+	border: 4px solid black;
+}
+
+.main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper4 .recommendDisplsyPart4 .recommendMovie h5 {
+	text-align: center;
+}
+
+
+.main .main_bottom .rec_refresh .refresh {
+	position: relative;
+	margin: 0px 0px;
 	text-align: center;
 }
 

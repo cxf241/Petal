@@ -79,28 +79,227 @@
 			<div class="main_bottom" id="main_bottom">
 				<div class="rec_refresh" id="rec_refresh">
 					<!-- 四个电影封面 -->
-					<div class="recommendDisplsy" id="recommend">
-						<div class="recommendMovie" id="movie1">
-							<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" />
-							<h5 id="movieName1">movie1</h5>
-						</div>
-						<div class="recommendMovie" id="movie2">
-							<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" />
-							<h5 id="movieName2">movie2</h5>
-						</div>
-						<div class="recommendMovie" id="movie3">
-							<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" />
-							<h5 id="movieName3">movie3</h5>
-						</div>
-						<div class="recommendMovie" id="movie4">
-							<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" />
-							<h5 id="movieName4">movie4</h5>
-						</div>
+					<div class="recommendDisplsy">
+
+						<div id="iSlider-wrapper1"></div>
+
+						<div id="iSlider-wrapper2"></div>
+
+						<div id="iSlider-wrapper3"></div>
+
+						<div id="iSlider-wrapper4"></div>
+
 					</div>
+
+					<div id="hidden-space" style="display:none">
+						<p style="font-size:3em;text-align: center;color:#04f512">A node in dom tree.</p>
+					</div>
+
+					<script type="text/javascript" src="js/iSlider.js"></script>
+					<script type="text/javascript" src="js/iSlider.animate.js"></script>
+					<script id="show-code">
+						var list1 = [
+							// picture1
+							{
+								content: '<div class="recommendDisplsyPart1" id="recommend11">' +
+									'<div class="recommendMovie" id="movie11">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName1">红海行动</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture2
+							{
+								content: '<div class="recommendDisplsyPart1" id="recommend12">' +
+									'<div class="recommendMovie" id="movie12">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture3
+							{
+								content: '<div class="recommendDisplsyPart1" id="recommend13">' +
+									'<div class="recommendMovie" id="movie13">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture4
+							{
+								content: '<div class="recommendDisplsyPart1" id="recommend14">' +
+									'<div class="recommendMovie" id="movie14">' +
+									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName4">头号玩家</h5>' +
+									'</div>' +
+									'</div>'
+							},
+						];
+
+						var list2 = [
+							// picture1
+							{
+								content: '<div class="recommendDisplsyPart2" id="recommend21">' +
+									'<div class="recommendMovie" id="movie21">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName1">红海行动</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture2
+							{
+								content: '<div class="recommendDisplsyPart2" id="recommend22">' +
+									'<div class="recommendMovie" id="movie22">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture3
+							{
+								content: '<div class="recommendDisplsyPart2" id="recommend23">' +
+									'<div class="recommendMovie" id="movie23">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture4
+							{
+								content: '<div class="recommendDisplsyPart2" id="recommend24">' +
+									'<div class="recommendMovie" id="movie24">' +
+									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName4">头号玩家</h5>' +
+									'</div>' +
+									'</div>'
+							},
+						];
+						
+						var list3 = [
+							// picture1
+							{
+								content: '<div class="recommendDisplsyPart3" id="recommend31">' +
+									'<div class="recommendMovie" id="movie31">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName1">红海行动</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture2
+							{
+								content: '<div class="recommendDisplsyPart3" id="recommend32">' +
+									'<div class="recommendMovie" id="movie32">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture3
+							{
+								content: '<div class="recommendDisplsyPart3" id="recommend33">' +
+									'<div class="recommendMovie" id="movie33">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture4
+							{
+								content: '<div class="recommendDisplsyPart3" id="recommend34">' +
+									'<div class="recommendMovie" id="movie34">' +
+									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName4">头号玩家</h5>' +
+									'</div>' +
+									'</div>'
+							},
+						];
+						
+						var list4 = [
+							// picture1
+							{
+								content: '<div class="recommendDisplsyPart4" id="recommend41">' +
+									'<div class="recommendMovie" id="movie41">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName1">红海行动</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture2
+							{
+								content: '<div class="recommendDisplsyPart4" id="recommend42">' +
+									'<div class="recommendMovie" id="movie42">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture3
+							{
+								content: '<div class="recommendDisplsyPart4" id="recommend43">' +
+									'<div class="recommendMovie" id="movie43">' +
+									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'</div>' +
+									'</div>'
+							},
+							// picture4
+							{
+								content: '<div class="recommendDisplsyPart4" id="recommend44">' +
+									'<div class="recommendMovie" id="movie44">' +
+									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
+									'<h5 id="movieName4">头号玩家</h5>' +
+									'</div>' +
+									'</div>'
+							},
+						];
+						
+						var S1 = new iSlider(document.getElementById('iSlider-wrapper1'), list1, {
+							isLooping: 1,
+							isOverspread: 1,
+							isAutoplay: 1,
+							animateTime: 800,
+							animateType: 'rotate',
+							isVertical: 1,
+							fillSeam: 1
+						});
+
+						var S2 = new iSlider(document.getElementById('iSlider-wrapper2'), list2, {
+							isLooping: 1,
+							isOverspread: 1,
+							isAutoplay: 1,
+							animateTime: 800,
+							animateType: 'rotate',
+							isVertical: 1,
+							fillSeam: 1
+						});
+						
+						var S3 = new iSlider(document.getElementById('iSlider-wrapper3'), list3, {
+							isLooping: 1,
+							isOverspread: 1,
+							isAutoplay: 1,
+							animateTime: 800,
+							animateType: 'rotate',
+							isVertical: 1,
+							fillSeam: 1
+						});
+						
+						var S4 = new iSlider(document.getElementById('iSlider-wrapper4'), list4, {
+							isLooping: 1,
+							isOverspread: 1,
+							isAutoplay: 1,
+							animateTime: 800,
+							animateType: 'rotate',
+							isVertical: 1,
+							fillSeam: 1
+						});
+						
+						
+					</script>
 					
 					<!-- 换一批（按钮） -->
 					<div class="refresh" id="refresh">
-						<button class="btn btn-success" id="refreshBtn">换一批</button>
+						<button class="btn btn-success" id="refreshBtn"  onclick="onanimationstart">换一批</button>
 					</div>
 				</div>
 			</div>
