@@ -21,24 +21,6 @@
 				})
 			})
 		</script>
-		<script>
-			function check() {
-				var name = document.getElementById("registerName");
-				var pwd1 = document.getElementById("registerPasswd");
-				var pwd2 = document.getElementById("registerPasswd2");
-				console.log(name.value);
-				if(name.value == "" || pwd1.value == "" || pwd2.value == "") {
-					alert("请输入完整信息！");
-					return false;
-				}
-				if(pwd1.value != pwd2.value) {
-					alert("两次密码不一致");
-					pwd1.value = "";
-					pwd2.value = "";
-					return false;
-				}
-			}
-		</script>
 	</head>
 
 	<body background="image/bg.jpg">
