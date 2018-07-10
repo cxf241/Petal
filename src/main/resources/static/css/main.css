@@ -25,6 +25,24 @@ body {
     z-index: -1;
 }
 
+.main_top_hide {
+    filter: blur(1.5px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.main_medium_hide {
+    filter: blur(1.5px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.main_bottom_hide {
+    filter: blur(1.5px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
 .show {
 	filter: blur();
     opacity: 1;
