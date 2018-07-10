@@ -103,14 +103,14 @@ body {
 	text-align: center;
 }
 
-.main .filmInfoBox .otheInfo_storyBox {
+.main .filmInfoBox .otherInfo_storyBox {
 	position: relative;
 	left: 20px;
 	width: 75%;
 	height: 100%;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox {
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox {
 	position: relative;
 	width: 100%;
 	height: auto;
@@ -118,25 +118,25 @@ body {
 	display: flex;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .otherInfoBox1,
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .otherInfoBox2 {
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox1,
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox2 {
 	position: relative;
 	width: 45%;
 	height: 100%;
 	left: 10px;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .otherInfoBox2 {
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox2 {
 	left: 30px;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .vr {
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .vr {
 	width: 1px;
 	border: 1px;
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .infoBox {
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox {
 	position: relative;
 	padding: 5px 0;
 	height: auto;
@@ -145,7 +145,7 @@ body {
 	color: gray;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .infoBox .attr {
+.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox .attr {
 	position: relative;
 	width: 65%;
 	height: auto;
@@ -153,25 +153,25 @@ body {
 	color: #000000;
 }
 
-.main .filmInfoBox .otheInfo_storyBox #hr1 {
+.main .filmInfoBox .otherInfo_storyBox #hr1 {
 	border: 0;
 	border-bottom: 1px dashed #ccc;
 	background: #999;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .storyBox {
+.main .filmInfoBox .otherInfo_storyBox .storyBox {
 	position: relative;
 	margin: 0 10px;
 	width: auto;
 	height: auto;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .storyBox div {
+.main .filmInfoBox .otherInfo_storyBox .storyBox div {
 	font-size: 18px;
 	color: #245269;
 }
 
-.main .filmInfoBox .otheInfo_storyBox .storyBox #story {
+.main .filmInfoBox .otherInfo_storyBox .storyBox #story {
 	text-indent:2em;
 	font-size: 16px;
 }
