@@ -314,7 +314,7 @@ body {
 	right: 5px;
 }
 
-.loginScene .login_registerBox form > div {
+.loginScene .login_registerBox .Box {
 	position: relative;
 	margin: 0 auto;
 	padding: 0;
@@ -322,34 +322,34 @@ body {
 	text-align: center;
 }
 
-.loginScene .login_registerBox form > div span {
+.loginScene .login_registerBox  div span {
 	top: 0;
 }
 
-.loginScene .login_registerBox form > #loginNameBox {
+.loginScene .login_registerBox #loginNameBox {
 	top: 50px;
 }
 
-.loginScene .login_registerBox form > #loginPasswdBox {
+.loginScene .login_registerBox #loginPasswdBox {
 	top: 90px;
 }
 
-.loginScene .login_registerBox form > #loginBtnBox {
+.loginScene .login_registerBox #loginBtnBox {
 	top: 130px;
 }
 
-.loginScene .login_registerBox form > #registerNameBox {
+.loginScene .login_registerBox #registerNameBox {
 	top: 50px;
 }
 
-.loginScene .login_registerBox form > #registerPasswdBox {
+.loginScene .login_registerBox #registerPasswdBox {
 	top: 75px;
 }
 
-.loginScene .login_registerBox form > #resurePasswdBox {
+.loginScene .login_registerBox #resurePasswdBox {
 	top: 100px;
 }
 
-.loginScene .login_registerBox form > #registerBtnBox {
+.loginScene .login_registerBox #registerBtnBox {
 	top: 130px;
 }

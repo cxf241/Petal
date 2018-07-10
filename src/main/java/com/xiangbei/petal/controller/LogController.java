@@ -19,7 +19,7 @@ public class LogController {
 
     //用户登录
     @RequestMapping(value = "doLogin",method = RequestMethod.POST)
-    public void login(HttpServletRequest request, HttpServletResponse response) throws Exception{
+    public boolean login(HttpServletRequest request, HttpServletResponse response) throws Exception{
         HttpSession session = request.getSession();
         User user = new User();
         user.setUname(request.getParameter("uname"));
@@ -28,27 +28,22 @@ public class LogController {
         if (userService.findUser(user)) {//登录成功
             //设置当前用户
             session.setAttribute("currentUser",user);
-            //跳转到主界面
-            response.sendRedirect("/main.html");
-        }
+            return true;
+        }else return false;
     }
 
     //用户注册
     @RequestMapping(value = "doRegister",method = RequestMethod.POST)
-    public void register(HttpServletRequest request, HttpServletResponse response) throws Exception{
+    public boolean register(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //可能有乱码问题
         User user = new User();
         user.setUname(request.getParameter("uname"));
         user.setUpwd(request.getParameter("upwd"));
-
-        if (userService.findUser(user)) {//用户已存在
-            System.out.println("username exists");
-        }else {
-            if (userService.registerUser(user)) {//注册成功
-                //跳转到登陆界面
-                response.sendRedirect("/main.html");
-            }
-
+        if (userService.findUser(user)) {
+            return false;
+        }
+        else {
+            return userService.registerUser(user);
         }
     }
 

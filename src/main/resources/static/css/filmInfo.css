@@ -1,0 +1,177 @@
+html, body {
+    margin:0 auto;
+    width: 100%;
+    height: 100%;
+    min-width: 1200px;
+    min-height: 600px;
+}
+
+body {
+	overflow-x: auto;
+}
+
+.main {
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.main_top {
+	position: relative;
+	margin: 0 1px;
+	top: 2px;
+	height: 60px;
+	border: 2px solid;
+	border-radius: 5px;
+	background-color: #5E5E5E;
+}
+
+.main_top .userInfo {
+	position: relative;
+	height: 100%;
+}
+
+.main_top .userInfo a {
+	position: relative;
+	top: 16px;
+	left: 10px;
+	height: 100%;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+}
+
+.main .logoBox {
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+.main .logoBox p {
+	margin-top: 16px;
+	margin-left: 50px;
+	font-size: 16px;
+	color: white;
+}
+
+.main_top .logoBox img {
+	margin: auto;
+	width: 50px;
+	height: 50px;
+	border: 1px solid darkgray;
+}
+
+.main_bottom {
+	position: relative;
+	margin: 0 auto;
+	top: 30px;
+	height: 70%;
+}
+
+.main_bottom #filmName {
+	position: relative;
+	text-align: center;
+	font-size: 22px;
+}
+
+.main .filmInfoBox {
+	position: relative;
+	margin: 0 auto;
+	padding: 30px 0;
+	width: 70%;
+	height: 100%;
+	display: flex;
+}
+
+.main .filmInfoBox .img_gradeBox {
+	position: relative;
+	width: 25%;
+	height: 100%;
+}
+
+.main .filmInfoBox .img_gradeBox img {
+	position: relative;
+	margin: 0 auto;
+	width: 220px;
+	height: 300px;
+}
+
+.main .filmInfoBox .img_gradeBox #grade {
+	position: relative;
+	top: 15px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.main .filmInfoBox .otheInfo_storyBox {
+	position: relative;
+	left: 20px;
+	width: 75%;
+	height: 100%;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox {
+	position: relative;
+	width: 100%;
+	height: auto;
+	font-size: 0;
+	display: flex;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .otherInfoBox1,
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .otherInfoBox2 {
+	position: relative;
+	width: 45%;
+	height: 100%;
+	left: 10px;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .otherInfoBox2 {
+	left: 30px;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .vr {
+	width: 1px;
+	border: 1px;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .infoBox {
+	position: relative;
+	padding: 5px 0;
+	height: auto;
+	display: flex;
+	font-size: 18px;
+	color: gray;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .otherInfoBox .infoBox .attr {
+	position: relative;
+	width: 65%;
+	height: auto;
+	font-size: 18px;
+	color: #000000;
+}
+
+.main .filmInfoBox .otheInfo_storyBox #hr1 {
+	border: 0;
+	border-bottom: 1px dashed #ccc;
+	background: #999;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .storyBox {
+	position: relative;
+	margin: 0 10px;
+	width: auto;
+	height: auto;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .storyBox div {
+	font-size: 18px;
+	color: #245269;
+}
+
+.main .filmInfoBox .otheInfo_storyBox .storyBox #story {
+	text-indent:2em;
+	font-size: 16px;
+}

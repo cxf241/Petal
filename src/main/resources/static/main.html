@@ -21,6 +21,7 @@
 				})
 			})
 		</script>
+<<<<<<< HEAD
 		<script>
 			function check() {
 				var name = document.getElementById("registerName");
@@ -39,6 +40,9 @@
 				}
 			}
 		</script>
+=======
+
+>>>>>>> 17c39a823f7b21b08fdf962bad3be3b2740e4bc4
 	</head>
 
 	<body background="image/bg.jpg">
@@ -370,46 +374,44 @@
 					<!-- 登录框 -->
 					<div class="tab-pane fade active in" id="login">
 						<!-- 登录表单 -->
-						<form action="/doLogin" method="post">
 							<!-- 用户名输入框 -->
-							<div class="usernameBox input-group" id="loginNameBox">
+							<div class="Box input-group" id="loginNameBox">
 								<span class="input-group-addon glyphicon glyphicon-user"></span>
 								<input class="form-control" id="loginName" name="uname" placeholder="请输入用户名" />
 							</div>
 							<!-- 密码输入框 -->
-							<div class="passwdBox input-group" id="loginPasswdBox">
+							<div class="Box input-group" id="loginPasswdBox">
 								<span class="input-group-addon glyphicon glyphicon-lock"></span>
-								<input class="form-control" id="loginPasswd" name="upwd" placeholder="请输入密码" />
+								<input class="form-control" type="password" id="loginPasswd" name="upwd" placeholder="请输入密码" />
 							</div>
-							<div class="btnBox" id="loginBtnBox">
-								<input class="form-control" type="submit" value="登录" />
+							<div class="Box" id="loginBtnBox">
+								<button class="form-control" onclick="doLogin()"  >登录</button>
 							</div>
-						</form>
 					</div>
 
 					<!-- 注册框 -->
 					<div class="tab-pane fade" id="register">
 						<!-- 注册表单 -->
-						<form action="doResgister" method="post">
+
 							<!-- 用户名输入框 -->
-							<div class="usernameBox input-group" id="registerNameBox">
+							<div class="Box input-group" id="registerNameBox">
 								<span class="input-group-addon glyphicon glyphicon-user" style="font-size: 16px;"></span>
 								<input class="form-control" id="registerName" name="uname" placeholder="请输入用户名" />
 							</div>
 							<!-- 密码输入框 -->
-							<div class="passwdBox input-group" id="registerPasswdBox">
+							<div class="Box input-group" id="registerPasswdBox">
 								<span class="input-group-addon glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input class="form-control" id="registerPasswd" name="upwd" placeholder="请输入密码" />
+								<input class="form-control" type="password" id="registerPasswd" name="upwd" placeholder="请输入密码" />
 							</div>
 							<!-- 确认密码输入框 -->
-							<div class="resurePasswdBox input-group" id="resurePasswdBox">
+							<div class="Box input-group" id="resurePasswdBox">
 								<span class="input-group-addon glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input class="form-control" id="resurePasswd" placeholder="确认密码" />
+								<input class="form-control" type="password" id="resurePasswd" placeholder="确认密码" />
 							</div>
-							<div class="btnBox" id="registerBtnBox">
-								<input class="form-control" type="submit" value="注册" />
+							<div class="Box" id="registerBtnBox">
+								<button class="form-control"  onclick="doRegister()">注册</button>
 							</div>
-						</form>
+
 					</div>
 				</div>
 			</div>

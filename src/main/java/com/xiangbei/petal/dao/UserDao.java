@@ -15,7 +15,7 @@ public interface UserDao {
     @Insert("INSERT INTO user(uname,upwd) VALUES(#{uname},#{upwd})")
     int addUser(User user);
 
-    @Select("SELECT * FROM user WHERE uname=#{uname} AND upwd=#{upwd}")
+    @Select("SELECT * FROM user WHERE uname=#{uname}")
     @ResultType(User.class)
     List<User> findUser(User user);
 }
