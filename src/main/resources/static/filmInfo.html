@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我不是药神（花瓣）</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/filmInfo.css" />
+		<script src="js/filmInfo.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	
+	<body>
+		<div class="main">
+			<!-- 用户信息和logo -->
+			<div class="main_top row">
+				<!-- 用户信息 -->
+				<div class="userInfo col-xs-2">
+					<a id="user">用户1</a>
+				</div>
+				
+				<!-- logo -->
+				<div class="logoBox col-xs-2 col-xs-offset-8">
+					<p>花瓣电影</p>
+					<img src="image/logo.png" />
+				</div>
+			</div>
+			
+			<!-- 电影信息 -->
+			<div class="main_bottom">
+				<!-- 电影名 -->
+				<p id="filmName">我不是药神（2018）</p>
+				
+				<!-- 详细信息 -->
+				<div class="filmInfoBox">
+					<!-- 电影图片、评分 -->
+					<div class="img_gradeBox">
+						<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2519070834.jpg" />
+						<p id="grade"><strong>豆瓣评分：9.0</strong></p>
+					</div>
+					
+					<!-- 其他信息、剧情简介 -->
+					<div class="otheInfo_storyBox">
+						<!-- 其他信息 -->
+						<div class="otherInfoBox">
+							<div class="otherInfoBox1">
+								<!-- 导演 -->
+								<span class="infoBox">
+									导演：
+									<span class="attr" id="director">文牧野</span>
+								</span>
+								
+								<!-- 主演 -->
+								<span class="infoBox">
+									主演：
+									<span class="attr" id="actors">
+										<span id="actor1">徐峥</span>
+										&nbsp;/&nbsp;
+										<span id="actor2">王传君</span>
+										&nbsp;/&nbsp;
+										<span id="actor3">周一围</span>
+									</span>
+								</span>
+								
+								<!-- 类型 -->
+								<span class="infoBox">
+									类型：
+									<span class="attr" id="types">
+										<span class="type1">剧情</span>
+										&nbsp;/&nbsp;
+										<span class="type2">喜剧</span>
+									</span>
+								</span>
+								
+								<!-- 地区 -->
+								<span class="infoBox">
+									地区：
+									<span class="attr" id="area">中国大陆</span>
+								</span>
+							</div>
+							
+							<!-- 垂直分割线 -->
+							<div class="vr"></div>
+							
+							<div class="otherInfoBox2">
+								<!-- 语言 -->
+								<span class="infoBox">
+									语言：
+									<span class="attr" id="language">汉语普通话 / 英语</span>
+								</span>
+								
+								<!-- 上映日期 -->
+								<span class="infoBox">
+									上映日期：
+									<span class="attr" id="date">2018-07-05(中国大陆) / 2018-06-30(大规模点映)</span>
+								</span>
+								
+								<!-- 片长 -->
+								<span class="infoBox">
+									片长：
+									<span class="attr" id="length">117分钟</span>
+								</span>
+							</div>
+						</div>
+						
+						<!-- 水平分割线 -->
+						<hr id="hr1" />
+						
+						<!-- 剧情简介 -->
+						<div class="storyBox">
+							<div>剧情简介</div>
+							<p id="story">一位不速之客的意外到访，打破了神油店老板程勇的平凡人生，
+								他从一个交不起房租的男性保健品商贩，一跃成为印度仿制药“格列宁”的独家代理商。
+								收获巨额利润的他，生活剧烈变化，被病患们冠以“药神”的称号。
+								但是，一场关于救赎的拉锯战也在波涛暗涌中慢慢展开...... </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
