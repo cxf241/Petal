@@ -354,9 +354,13 @@ body {
 	top: 130px;
 }
 
-
+/*更改图片轮转跳转字样样式*/
 a.recommendMovieLink:link {color: black;}
 a.recommendMovieLink{
 	position: relative;
 	top: 9px;
+}
+/*除去图片轮转前面的小黑点*/
+ul li{
+	list-style-type: none;
 }
