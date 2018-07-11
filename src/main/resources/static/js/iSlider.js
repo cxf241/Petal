@@ -1549,7 +1549,8 @@
     iSliderPrototype.slideNext = function () {
         this.slideTo.apply(this, [this.slideIndex + 1].concat(_A(arguments)));
     };
-
+    
+    
     /**
      * Slide to previous scene
      * @public

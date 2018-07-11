@@ -24,9 +24,7 @@
 	</head>
 
 	<body background="image/bg.jpg">
-		<!--
-        	主显示界面
-        -->
+		<!--主显示界面-->
 		<div class="main" id="main">
 			<!-- 登录状态和logo -->
 			<div class="main_top row" id="main_top">
@@ -44,18 +42,13 @@
 			</div>
 			<!-- 登录状态和logo结束 -->
 
-			<!-- 登录、搜索操作  -->
+			<!-- 登录和搜索操作  -->
 			<div class="main_medium row" id="main_medium">
 				<div class="login_recommend_search col-xs-4 col-xs-offset-4" id="login_recommend_search">
 					<!-- 打开登录框 -->
 					<div class="toLogin" id="toLogin">
 						<button class="btn btn-success" id="toLoginBtn" onclick="Login()">登录</button>
 					</div>
-					<!-- 搜索框和按钮 -->
-					<!--<div class="search input-group" id="search">
-						<input class="form-control" id="searchTxt" placeholder="输入电影名" />
-						<button class="btn btn-success" id="searchBtn">搜索</button>
-					</div>-->
 
 				</div>
 			</div>
@@ -98,7 +91,7 @@
 				<script src="js/searchdemo.js"></script>
 			</div>
 
-			<!-- 登录、搜索操作结束  -->
+			<!-- 登录和搜索操作结束  -->
 
 			<!-- 显示推荐电影 -->
 			<div class="main_bottom" id="main_bottom">
@@ -128,8 +121,8 @@
 							{
 								content: '<div class="recommendDisplsyPart1" id="recommend11">' +
 									'<div class="recommendMovie" id="movie11">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName1">红海行动</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName1" href="filmInfo.html" class="recommendMovieLink">红海行动</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -137,8 +130,8 @@
 							{
 								content: '<div class="recommendDisplsyPart1" id="recommend12">' +
 									'<div class="recommendMovie" id="movie12">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName2" href="filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -146,8 +139,8 @@
 							{
 								content: '<div class="recommendDisplsyPart1" id="recommend13">' +
 									'<div class="recommendMovie" id="movie13">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName3" href="filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -155,8 +148,8 @@
 							{
 								content: '<div class="recommendDisplsyPart1" id="recommend14">' +
 									'<div class="recommendMovie" id="movie14">' +
-									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName4">头号玩家</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName4" href="filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -167,8 +160,8 @@
 							{
 								content: '<div class="recommendDisplsyPart2" id="recommend21">' +
 									'<div class="recommendMovie" id="movie21">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName1">红海行动</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName1" href="filmInfo.html" class="recommendMovieLink">红海行动</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -176,8 +169,8 @@
 							{
 								content: '<div class="recommendDisplsyPart2" id="recommend22">' +
 									'<div class="recommendMovie" id="movie22">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName2" href="filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -185,8 +178,8 @@
 							{
 								content: '<div class="recommendDisplsyPart2" id="recommend23">' +
 									'<div class="recommendMovie" id="movie23">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName3" href="filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -194,8 +187,8 @@
 							{
 								content: '<div class="recommendDisplsyPart2" id="recommend24">' +
 									'<div class="recommendMovie" id="movie24">' +
-									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName4">头号玩家</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName4" href="filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -206,8 +199,8 @@
 							{
 								content: '<div class="recommendDisplsyPart3" id="recommend31">' +
 									'<div class="recommendMovie" id="movie31">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName1">红海行动</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName1" href="filmInfo.html" class="recommendMovieLink">红海行动</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -215,8 +208,8 @@
 							{
 								content: '<div class="recommendDisplsyPart3" id="recommend32">' +
 									'<div class="recommendMovie" id="movie32">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName2" href="filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -224,8 +217,8 @@
 							{
 								content: '<div class="recommendDisplsyPart3" id="recommend33">' +
 									'<div class="recommendMovie" id="movie33">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName3" href="filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -233,8 +226,8 @@
 							{
 								content: '<div class="recommendDisplsyPart3" id="recommend34">' +
 									'<div class="recommendMovie" id="movie34">' +
-									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName4">头号玩家</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName4" href="filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -245,8 +238,8 @@
 							{
 								content: '<div class="recommendDisplsyPart4" id="recommend41">' +
 									'<div class="recommendMovie" id="movie41">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName1">红海行动</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName1" href="filmInfo.html" class="recommendMovieLink">红海行动</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -254,8 +247,8 @@
 							{
 								content: '<div class="recommendDisplsyPart4" id="recommend42">' +
 									'<div class="recommendMovie" id="movie42">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName2">这个杀手不太冷</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName2" href="filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -263,8 +256,8 @@
 							{
 								content: '<div class="recommendDisplsyPart4" id="recommend43">' +
 									'<div class="recommendMovie" id="movie43">' +
-									'<img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName3">肖申克的救赎</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName3" href="filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -272,8 +265,8 @@
 							{
 								content: '<div class="recommendDisplsyPart4" id="recommend44">' +
 									'<div class="recommendMovie" id="movie44">' +
-									'<img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/>' +
-									'<h5 id="movieName4">头号玩家</h5>' +
+									'<a href="filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
+									'<a id="movieName4" href="filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
 									'</div>' +
 									'</div>'
 							},
@@ -282,58 +275,58 @@
 						var S1 = new iSlider(document.getElementById('iSlider-wrapper1'), list1, {
 							isLooping: 1,
 							isOverspread: 1,
-							isAutoplay: 1,
+							isAutoplay: 0,
 							animateTime: 800,
 							animateType: 'rotate',
 							isVertical: 1,
-							duration: 4000,
-							fillSeam: 1
+							fillSeam: 1,
+							isTouchable: 0,
 						});
 
 						var S2 = new iSlider(document.getElementById('iSlider-wrapper2'), list2, {
 							isLooping: 1,
 							isOverspread: 1,
-							isAutoplay: 1,
+							isAutoplay: 0,
 							animateTime: 800,
 							animateType: 'rotate',
 							isVertical: 1,
-							duration: 4000,
-							fillSeam: 1
+							fillSeam: 1,
+							isTouchable: 0
 						});
 
 						var S3 = new iSlider(document.getElementById('iSlider-wrapper3'), list3, {
 							isLooping: 1,
 							isOverspread: 1,
-							isAutoplay: 1,
+							isAutoplay: 0,
 							animateTime: 800,
 							animateType: 'rotate',
 							isVertical: 1,
-							duration: 4000,
-							fillSeam: 1
+							fillSeam: 1,
+							isTouchable: 0
 						});
 
 						var S4 = new iSlider(document.getElementById('iSlider-wrapper4'), list4, {
 							isLooping: 1,
 							isOverspread: 1,
-							isAutoplay: 1,
+							isAutoplay: 0,
 							animateTime: 800,
 							animateType: 'rotate',
 							isVertical: 1,
-							duration: 4000,
-							fillSeam: 1
+							fillSeam: 1,
+							isTouchable: 0
 						});
 					</script>
 
-					<!-- 换一批（按钮） -->
+					<!-- 下一批（按钮） -->
 					<div class="refresh" id="refresh">
-						<button class="btn btn-success" id="refreshBtn" onclick="onanimationstart">换一批</button>
+						<button class="btn btn-success" id="refreshBtn" onclick="S1.slideNext(),S2.slideNext(),S3.slideNext(),S4.slideNext()">下一批</button>
 					</div>
+
 				</div>
 			</div>
+			<!-- 显示推荐电影 结束-->
 		</div>
-		<!--
-        	登录、注册框
-        -->
+		<!--登录、注册框-->
 		<div class="loginScene" id="loginScene">
 			<div class="login_registerBox">
 				<div class="closeLogin" id="closeLogin">
@@ -352,43 +345,43 @@
 					<!-- 登录框 -->
 					<div class="tab-pane fade active in" id="login">
 						<!-- 登录表单 -->
-							<!-- 用户名输入框 -->
-							<div class="Box input-group" id="loginNameBox">
-								<span class="input-group-addon glyphicon glyphicon-user"></span>
-								<input class="form-control" id="loginName" name="uname" placeholder="请输入用户名" />
-							</div>
-							<!-- 密码输入框 -->
-							<div class="Box input-group" id="loginPasswdBox">
-								<span class="input-group-addon glyphicon glyphicon-lock"></span>
-								<input class="form-control" type="password" id="loginPasswd" name="upwd" placeholder="请输入密码" />
-							</div>
-							<div class="Box" id="loginBtnBox">
-								<button class="form-control" onclick="doLogin()"  >登录</button>
-							</div>
+						<!-- 用户名输入框 -->
+						<div class="Box input-group" id="loginNameBox">
+							<span class="input-group-addon glyphicon glyphicon-user"></span>
+							<input class="form-control" id="loginName" name="uname" placeholder="请输入用户名" />
+						</div>
+						<!-- 密码输入框 -->
+						<div class="Box input-group" id="loginPasswdBox">
+							<span class="input-group-addon glyphicon glyphicon-lock"></span>
+							<input class="form-control" type="password" id="loginPasswd" name="upwd" placeholder="请输入密码" />
+						</div>
+						<div class="Box" id="loginBtnBox">
+							<button class="form-control" onclick="doLogin()">登录</button>
+						</div>
 					</div>
 
 					<!-- 注册框 -->
 					<div class="tab-pane fade" id="register">
 						<!-- 注册表单 -->
 
-							<!-- 用户名输入框 -->
-							<div class="Box input-group" id="registerNameBox">
-								<span class="input-group-addon glyphicon glyphicon-user" style="font-size: 16px;"></span>
-								<input class="form-control" id="registerName" name="uname" placeholder="请输入用户名" />
-							</div>
-							<!-- 密码输入框 -->
-							<div class="Box input-group" id="registerPasswdBox">
-								<span class="input-group-addon glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input class="form-control" type="password" id="registerPasswd" name="upwd" placeholder="请输入密码" />
-							</div>
-							<!-- 确认密码输入框 -->
-							<div class="Box input-group" id="resurePasswdBox">
-								<span class="input-group-addon glyphicon glyphicon-lock" style="font-size: 16px;"></span>
-								<input class="form-control" type="password" id="resurePasswd" placeholder="确认密码" />
-							</div>
-							<div class="Box" id="registerBtnBox">
-								<button class="form-control"  onclick="doRegister()">注册</button>
-							</div>
+						<!-- 用户名输入框 -->
+						<div class="Box input-group" id="registerNameBox">
+							<span class="input-group-addon glyphicon glyphicon-user" style="font-size: 16px;"></span>
+							<input class="form-control" id="registerName" name="uname" placeholder="请输入用户名" />
+						</div>
+						<!-- 密码输入框 -->
+						<div class="Box input-group" id="registerPasswdBox">
+							<span class="input-group-addon glyphicon glyphicon-lock" style="font-size: 16px;"></span>
+							<input class="form-control" type="password" id="registerPasswd" name="upwd" placeholder="请输入密码" />
+						</div>
+						<!-- 确认密码输入框 -->
+						<div class="Box input-group" id="resurePasswdBox">
+							<span class="input-group-addon glyphicon glyphicon-lock" style="font-size: 16px;"></span>
+							<input class="form-control" type="password" id="resurePasswd" placeholder="确认密码" />
+						</div>
+						<div class="Box" id="registerBtnBox">
+							<button class="form-control" onclick="doRegister()">注册</button>
+						</div>
 
 					</div>
 				</div>
