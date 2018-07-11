@@ -353,3 +353,10 @@ body {
 .loginScene .login_registerBox #registerBtnBox {
 	top: 130px;
 }
+
+
+a:link {color: black;}
+a{
+	position: relative;
+	top: 9px;
+}

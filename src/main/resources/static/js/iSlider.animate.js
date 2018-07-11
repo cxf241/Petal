@@ -38,7 +38,7 @@
 
                 var outer = dom.parentElement;
                 iSlider.setStyle(outer, 'perspective', scale * 4);
-
+                
                 dom.style.visibility = 'visible';
                 if (direct > 0 && i === 2) {
                     dom.style.visibility = 'hidden';
@@ -165,7 +165,7 @@
 
             function zoomout(dom, axis, scale, i, offset) {
                 var z, o, s;
-
+                
                 var oa = offset / scale;
                 switch (i) {
                     case 0:
@@ -193,7 +193,7 @@
                 }
                 dom.style.cssText += 'z-index:' + z + ';opacity:' + o + ';' + iSlider.styleProp('transform') + ':scale(' + s + ');';
             }
-
+            
             zoomout.reverse = true;
             return zoomout;
         })()
