@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>花瓣电影</title>
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/searchResult.css" />
+	</head>
+	
+	<body>
+		<div class="main">
+			<!-- 用户信息和logo -->
+			<div class="main_top row">
+				<!-- 用户信息 -->
+				<div class="userInfo col-xs-2">
+					<a id="user">用户1</a>
+				</div>
+				
+				<!-- logo -->
+				<div class="logoBox col-xs-2 col-xs-offset-8">
+					<p>花瓣电影</p>
+					<a href="../static/main.html"><img src="../static/image/logo.png" /></a>
+				</div>
+			</div>
+			
+			<!-- 搜索结果 -->
+			<div class="main_bottom">
+				<div class="search">
+					<!-- 搜索框 -->
+					<div class="searchBox input-group">
+						<input class="form-control" id="searchTxt" type="text" name="searchTxt" />
+						<span class="input-group-btn">
+							<button class="btn btn-primary">搜索</button>
+						</span>
+					</div>
+					
+					<!-- 标签 -->
+					<div class="tags">
+						<a href="#">剧情</a>
+						&nbsp;/&nbsp;
+						<a href="#">喜剧</a>
+						&nbsp;/&nbsp;
+						<a href="#">悬疑</a>
+						&nbsp;/&nbsp;
+						<a href="#">推理</a>
+						&nbsp;/&nbsp;
+						<a href="#">犯罪</a>
+					</div>
+				</div>
+				
+				<!-- 结果显示 -->
+				<div class="results">
+					<!-- 搜索信息 -->
+					<div class="searchInfo">
+						搜索 “
+						<div id="txt">###</div>
+						” 的结果
+					</div>
+					
+					<!-- 电影 -->
+					<div class="filmBox">
+						<div class="film">
+							<div class="imgBox"><a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2520331478.jpg" /></a></div>
+							<div class="filmInfo">
+								<div class="filmName"><a href="#">超时空同居</a></div>
+								<div class="filmGrade"><strong>7.0</strong></div>
+								<div class="actors">雷佳音 / 佟丽娅 / 张衣</div>
+							</div>
+						</div>
+						<div class="shadow"></div>
+					</div>
+					
+					<!-- 电影 -->
+					<div class="filmBox">
+						<div class="film">
+							<div class="imgBox"><a href="#"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2525581412.jpg" /></a></div>
+							<div class="filmInfo">
+								<div class="filmName"><a href="#">迷失地铁</a></div>
+								<div class="filmGrade"><strong>6.0</strong></div>
+								<div class="actors">王真儿 / 王煜 / 朱莉</div>
+							</div>
+						</div>
+						<div class="shadow"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -41,17 +41,21 @@ body {
 	color: white;
 }
 
-.main .logoBox {
+.main_top .logoBox {
 	position: relative;
 	height: 100%;
 	display: flex;
 }
 
-.main .logoBox p {
+.main_top .logoBox p {
 	margin-top: 16px;
 	margin-left: 50px;
 	font-size: 16px;
 	color: white;
+}
+
+.main_top .logoBox a {
+	margin: auto;
 }
 
 .main_top .logoBox img {
