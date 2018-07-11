@@ -355,8 +355,8 @@ body {
 }
 
 
-a:link {color: black;}
-a{
+a.recommendMovieLink:link {color: black;}
+a.recommendMovieLink{
 	position: relative;
 	top: 9px;
 }
