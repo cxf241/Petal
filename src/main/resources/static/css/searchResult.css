@@ -168,7 +168,7 @@ body {
 	position: relative;
 	width: 60px;
 	border: 60px solid transparent;
-	border-top: 20px solid dimgrey;
+	border-top: 20px solid gray;
 	border-right: 0;
 	display: inline-block;
 }

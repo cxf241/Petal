@@ -21,7 +21,13 @@ body {
 
 .main_hide {
     filter: blur(1.5px);
-    opacity: 0.5;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.loginScene_hide {
+	filter: blur(1.5px);
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -40,8 +46,15 @@ body {
 .main_bottom_hide {
     filter: blur(1.5px);
     opacity: 0.3;
-    z-index: -1;
+    z-index: 1;
 }
+
+.search--open_hide{
+    filter: blur(1.5px);
+    opacity: 0.0;
+    z-index: 1;
+}
+
 
 .show {
 	filter: blur();
@@ -358,8 +371,22 @@ body {
 a.recommendMovieLink:link {color: black;}
 a.recommendMovieLink{
 	position: relative;
+	color: black;
 	top: 9px;
 }
+
+a.recommendMovieLink:hover{
+	position: relative;
+	color: black;
+	top: 9px;
+}
+
+a.recommendMovieLink:visited{
+	position: relative;
+	color: black;
+	top: 9px;
+}
+
 /*除去图片轮转前面的小黑点*/
 ul li{
 	list-style-type: none;
