@@ -49,7 +49,6 @@
 					<div class="toLogin" id="toLogin">
 						<button class="btn btn-success" id="toLoginBtn" onclick="Login()">登录</button>
 					</div>
-
 				</div>
 			</div>
 
@@ -78,161 +77,51 @@
 					<script type="text/javascript" src="js/iSlider.js"></script>
 					<script type="text/javascript" src="js/iSlider.animate.js"></script>
 					<script id="show-code">
-						var list1 = [
-							// picture1
-							{
-								content: '<div class="recommendDisplsyPart1" id="recommend11">' +
-									'<div class="recommendMovie" id="movie11">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName1" href="../templates/filmInfo.html" class="recommendMovieLink">红海行动</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture2
-							{
-								content: '<div class="recommendDisplsyPart1" id="recommend12">' +
-									'<div class="recommendMovie" id="movie12">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName2" href="../templates/filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture3
-							{
-								content: '<div class="recommendDisplsyPart1" id="recommend13">' +
-									'<div class="recommendMovie" id="movie13">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName3" href="../templates/filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture4
-							{
-								content: '<div class="recommendDisplsyPart1" id="recommend14">' +
-									'<div class="recommendMovie" id="movie14">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName4" href="../templates/filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
-									'</div>' +
-									'</div>'
-							},
-						];
+                        var list1 = [];
+                        var list2 = [];
+                        var list3 = [];
+                        var list4 = [];
+                        $.ajax({
+                            url: "/films",
+                            async: false,
+                            success: function(data){
+                                for(var i = 0; i < data.length; i += 4){
+                                    list1.push({
+                                        content: '<div class="recommendDisplsyPart1">' +
+                                        '<div class="recommendMovie">' +
+                                        '<a href="/filmInfo?id=' + data[i].id + '" class="recommendMovieLink"><img src="' + data[i].url + '" width=222px height=296px/></a>' +
+                                        '<a href="/filmInfo?id=' + data[i].id + '" class="recommendMovieLink">' + data[i].name + '</a>' +
+                                        '</div>' +
+                                        '</div>'
+                                    });
+                                    list2.push({
+                                        content: '<div class="recommendDisplsyPart2">' +
+                                        '<div class="recommendMovie">' +
+                                        '<a href="/filmInfo?id=' + data[i + 1].id + '" class="recommendMovieLink"><img src="' + data[i + 1].url + '" width=222px height=296px/></a>' +
+                                        '<a href="/filmInfo?id=' + data[i + 1].id + '" class="recommendMovieLink">' + data[i + 1].name + '</a>' +
+                                        '</div>' +
+                                        '</div>'
+                                    });
+                                    list3.push({
+                                        content: '<div class="recommendDisplsyPart3">' +
+                                        '<div class="recommendMovie">' +
+                                        '<a href="/filmInfo?id=' + data[i + 2].id + '" class="recommendMovieLink"><img src="' + data[i + 2].url + '" width=222px height=296px/></a>' +
+                                        '<a href="/filmInfo?id=' + data[i + 2].id + '" class="recommendMovieLink">' + data[i + 2].name + '</a>' +
+                                        '</div>' +
+                                        '</div>'
+                                    });
+                                    list4.push({
+                                        content: '<div class="recommendDisplsyPart4">' +
+                                        '<div class="recommendMovie">' +
+                                        '<a href="/filmInfo?id=' + data[i + 3].id + '" class="recommendMovieLink"><img src="' + data[i + 3].url + '" width=222px height=296px/></a>' +
+                                        '<a href="/filmInfo?id=' + data[i + 3].id + '" class="recommendMovieLink">' + data[i + 3].name + '</a>' +
+                                        '</div>' +
+                                        '</div>'
+                                    });
 
-						var list2 = [
-							// picture1
-							{
-								content: '<div class="recommendDisplsyPart2" id="recommend21">' +
-									'<div class="recommendMovie" id="movie21">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName1" href="../templates/filmInfo.html" class="recommendMovieLink">红海行动</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture2
-							{
-								content: '<div class="recommendDisplsyPart2" id="recommend22">' +
-									'<div class="recommendMovie" id="movie22">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName2" href="../templates/filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture3
-							{
-								content: '<div class="recommendDisplsyPart2" id="recommend23">' +
-									'<div class="recommendMovie" id="movie23">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName3" href="../templates/filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture4
-							{
-								content: '<div class="recommendDisplsyPart2" id="recommend24">' +
-									'<div class="recommendMovie" id="movie24">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName4" href="../templates/filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
-									'</div>' +
-									'</div>'
-							},
-						];
-
-						var list3 = [
-							// picture1
-							{
-								content: '<div class="recommendDisplsyPart3" id="recommend31">' +
-									'<div class="recommendMovie" id="movie31">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName1" href="../templates/filmInfo.html" class="recommendMovieLink">红海行动</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture2
-							{
-								content: '<div class="recommendDisplsyPart3" id="recommend32">' +
-									'<div class="recommendMovie" id="movie32">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName2" href="../templates/filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture3
-							{
-								content: '<div class="recommendDisplsyPart3" id="recommend33">' +
-									'<div class="recommendMovie" id="movie33">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName3" href="../templates/filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture4
-							{
-								content: '<div class="recommendDisplsyPart3" id="recommend34">' +
-									'<div class="recommendMovie" id="movie34">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName4" href="../templates/filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
-									'</div>' +
-									'</div>'
-							},
-						];
-
-						var list4 = [
-							// picture1
-							{
-								content: '<div class="recommendDisplsyPart4" id="recommend41">' +
-									'<div class="recommendMovie" id="movie41">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2514119443.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName1" href="../templates/filmInfo.html" class="recommendMovieLink">红海行动</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture2
-							{
-								content: '<div class="recommendDisplsyPart4" id="recommend42">' +
-									'<div class="recommendMovie" id="movie42">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName2" href="../templates/filmInfo.html" class="recommendMovieLink">这个杀手不太冷</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture3
-							{
-								content: '<div class="recommendDisplsyPart4" id="recommend43">' +
-									'<div class="recommendMovie" id="movie43">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName3" href="../templates/filmInfo.html" class="recommendMovieLink">肖申克的救赎</a>' +
-									'</div>' +
-									'</div>'
-							},
-							// picture4
-							{
-								content: '<div class="recommendDisplsyPart4" id="recommend44">' +
-									'<div class="recommendMovie" id="movie44">' +
-									'<a href="../templates/filmInfo.html" class="recommendMovieLink"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" width=222px height=296px/></a>' +
-									'<a id="movieName4" href="../templates/filmInfo.html" class="recommendMovieLink">头号玩家</a>' +
-									'</div>' +
-									'</div>'
-							},
-						];
+                                }
+                            }
+                        });
 
 						var S1 = new iSlider(document.getElementById('iSlider-wrapper1'), list1, {
 							isLooping: 1,
