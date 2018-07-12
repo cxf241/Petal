@@ -8,6 +8,8 @@ html, body {
 
 body {
 	overflow-x: auto;
+	background: url(../image/Sunburst_Rays.png) no-repeat;
+	background-size: 100%;
 }
 
 .main {

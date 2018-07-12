@@ -9,6 +9,8 @@ html, body {
 body {
 	padding: 10px;
 	overflow-x: auto;
+	background: url(../image/Maverick.png) no-repeat;
+	background-size: 100%;
 }
 
 .main {
