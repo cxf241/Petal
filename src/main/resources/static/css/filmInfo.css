@@ -68,7 +68,7 @@ body {
 .main_bottom {
 	position: relative;
 	margin: 0 auto;
-	top: 30px;
+	top: 160px;
 	height: 70%;
 }
 
@@ -103,6 +103,7 @@ body {
 .main .filmInfoBox .img_gradeBox #grade {
 	position: relative;
 	top: 15px;
+	width: 220px;
 	font-size: 20px;
 	text-align: center;
 }
