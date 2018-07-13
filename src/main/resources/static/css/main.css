@@ -355,19 +355,23 @@ body {
 }
 
 .loginScene .login_registerBox #registerNameBox {
-	top: 50px;
+	top: 20px;
+}
+
+.loginScene .login_registerBox #doubanNameBox {
+	top: 40px;
 }
 
 .loginScene .login_registerBox #registerPasswdBox {
-	top: 75px;
+	top: 60px;
 }
 
 .loginScene .login_registerBox #resurePasswdBox {
-	top: 100px;
+	top: 80px;
 }
 
 .loginScene .login_registerBox #registerBtnBox {
-	top: 130px;
+	top: 100px;
 }
 
 /*更改图片轮转跳转字样样式*/
