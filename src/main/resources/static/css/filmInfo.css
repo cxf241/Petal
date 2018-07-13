@@ -2,15 +2,15 @@ html, body {
     margin:0 auto;
     width: 100%;
     height: 100%;
-    min-width: 1920px;
-    min-height: 1080px;
+    min-width: 800px;
+    min-height: 450px;
 }
 
 body {
 	overflow-x: auto;
-	background: url(../image/8bitwallpaper.png) no-repeat;
+	background: url(../image/blue.png) no-repeat;
 	/*background-size: 100%;*/
-	/*background-size: contain;*/
+	background-size: cover;
 }
 
 .main {
@@ -26,7 +26,10 @@ body {
 	height: 60px;
 	border: 2px solid;
 	border-radius: 5px;
-	background-color: #5E5E5E;
+	background-color: steelblue;
+	/*background-color: dimgrey;*/
+/*	background-color: lightslategrey*/
+/*	background-color: cadetblue*/
 }
 
 .main_top .userInfo {
@@ -78,7 +81,7 @@ body {
 .main_bottom #filmName {
 	position: relative;
 	text-align: center;
-	font-size: 22px;
+	font-size: 28px;
 }
 
 .main .filmInfoBox {
@@ -151,15 +154,15 @@ body {
 	padding: 5px 0;
 	height: auto;
 	display: flex;
-	font-size: 18px;
-	color: gray;
+	font-size: 22px;
+	color: black;
 }
 
 .main .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox .attr {
 	position: relative;
 	width: 65%;
 	height: auto;
-	font-size: 18px;
+	font-size: 20px;
 	color: #000000;
 }
 
@@ -177,11 +180,11 @@ body {
 }
 
 .main .filmInfoBox .otherInfo_storyBox .storyBox div {
-	font-size: 18px;
-	color: #245269;
+	font-size: 22px;
+	color: black;
 }
 
 .main .filmInfoBox .otherInfo_storyBox .storyBox #story {
 	text-indent:2em;
-	font-size: 16px;
+	font-size: 20px;
 }

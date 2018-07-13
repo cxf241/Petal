@@ -10,7 +10,7 @@ body {
 	overflow-x: auto;
 	background: url(../image/Sunburst_Rays.png);
 	/*background-size: 100%;*/
-	/*background-size: contain;*/
+	background-size: cover;
 }
 
 .main {
