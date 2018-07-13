@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/recommendResult.css" />
+		<title>花瓣电影推荐</title>
+	</head>
+	
+	<body>
+		<div class="main">
+			<!-- 用户信息和logo -->
+			<div class="main_top row">
+				<!-- 用户信息 -->
+				<div class="userInfo col-xs-2">
+					<a id="user">用户1</a>
+				</div>
+				
+				<!-- logo -->
+				<div class="logoBox col-xs-2 col-xs-offset-8">
+					<p>花瓣电影</p>
+					<a href="/main.html"><img src="/image/logo.png" /></a>
+				</div>
+			</div>
+			
+			<!-- 推荐信息 -->
+			<div class="main_bottom">
+				<!-- 第一行 -->
+				<div class="displayRow">
+					<!-- 左上 -->
+					<div class="displayLeft">
+						<div class="filmInfo">
+							<div class="filmName"><a href="#">超时空同居</a></div>
+							<div class="actors">雷佳音 / 佟丽娅 / 张衣</div>
+						</div>
+						<div class="filmWrapper" style="background-image: url(https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2520331478.jpg)">
+							<div class="ribbon-wrapper-green"><div class="ribbon-green">7.0</div></div>
+						</div>
+					</div>
+					<!-- 右上 -->
+					<div class="displayRight">
+						<div class="filmWrapper" style="background-image: url(https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2526297221.jpg)">
+							<div class="ribbon-wrapper-green"><div class="ribbon-green">7.3</div></div>
+						</div>
+						<div class="filmInfo">
+							<div class="filmName"><a href="#">邪不压正</a></div>
+							<div class="actors">彭于晏 / 廖凡 / 姜文</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 第二行 -->
+				<div class="displayRow">
+					<!-- 左下 -->
+					<div class="displayLeft">
+						<div class="filmInfo">
+							<div class="filmName"><a href="#">快把我哥带走</a></div>
+							<div class="actors">曾舜晞 / 孙千 / 王旭东</div>
+						</div>
+						<div class="filmWrapper" style="background-image: url(https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2517756784.jpg)">
+							<div class="ribbon-wrapper-green"><div class="ribbon-green">7.4</div></div>
+						</div>
+					</div>
+					<!-- 右下 -->
+					<div class="displayRight">
+						<div class="filmWrapper" style="background-image: url(https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2511355624.jpg)">
+							<div class="ribbon-wrapper-green"><div class="ribbon-green">6.7</div></div>
+						</div>
+						<div class="filmInfo">
+							<div class="filmName"><a href="#">唐人街探案2</a></div>
+							<div class="actors">王宝强 / 刘昊然 / 肖央</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="changeBtn">
+					<button class="btn btn-success">换一批</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
