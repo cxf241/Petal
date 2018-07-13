@@ -15,10 +15,10 @@ import java.util.Map;
 public class MovieController {
     @Autowired
     MovieService movieService;
-    @RequestMapping("/filmInfo")
+    @RequestMapping("filmInfo")
     public String getMovieById(@RequestParam(name="id")String id, Map<String,Object> map) {
         map.put("movie", movieService.getMovieById(id));
-        return "/filmInfo";
+        return "filmInfo";
     }
 
     @RequestMapping("/films")

@@ -30,13 +30,14 @@
     overflow: hidden;
     display: -moz-box;
     display: -webkit-box;
-    display: box;
+    /*display: box;*/
+    display: flex;
     -moz-box-pack: center;
     -webkit-box-pack: center;
-    box-pack: center;
+    /*box-pack: center;*/
     -moz-box-align: center;
     -webkit-box-align: center;
-    box-align: center;
+    /*box-align: center;*/
 }
 
 .islider-img > img {
