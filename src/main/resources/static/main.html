@@ -55,6 +55,7 @@
 			<!-- 登录和搜索操作结束  -->
 
 			<!-- 显示推荐电影 -->
+			
 			<div class="main_bottom" id="main_bottom">
 				<div class="rec_refresh" id="rec_refresh">
 					<!-- 四个电影封面 -->
@@ -202,14 +203,13 @@
 			</svg>
 			<main class="main-wrap">
 				<div class="search">
-					<button id="searchCloseBtn" class="btn btn--search-close" aria-label="Close search form"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
-					<form class="search__form" action="">
+					<button id="searchCloseBtn" class="btn btn--search-close" aria-label="Close search form"></button>
+					<div class="search__form"><!--form & action=""-->
 						<input id="search-input" class="search__input" name="search" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 						<button id="searchBtn" class="btn btn--search"><svg class="icon icon--search"><use xlink:href="#icon-search"></use></svg></button>
-					</form>
+					</div>
 					<div class="search__suggestion">
-						<h3>Press esc to cancel searching</h3>
-						<h3>Input some key words to search movies</h3>
+						<h3>按下esc退出搜索</h3>
 					</div>
 				</div>
 			</main>

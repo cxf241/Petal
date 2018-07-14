@@ -28,8 +28,7 @@
 			<!-- 电影信息 -->
 			<div class="main_bottom">
 				<!-- 电影名 -->
-				<p id="filmName" th:text="${movie.name}"></p>
-				
+				<strong><p id="filmName" th:text="${movie.name}"></p></strong>
 				<!-- 详细信息 -->
 				<div class="filmInfoBox">
 					<!-- 电影图片、评分 -->
@@ -99,12 +98,16 @@
 						
 						<!-- 剧情简介 -->
 						<div class="storyBox">
-							<div>剧情简介</div>
+							<div><strong>剧情简介</strong></div>
 							<p id="story" th:text="${movie.info}"> </p>
 						</div>
 					</div>
 				</div>
 			</div>
+		
+		<div class="similarRecommand">
+			<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
+		</div>
 		</div>
 	</body>
 </html>
