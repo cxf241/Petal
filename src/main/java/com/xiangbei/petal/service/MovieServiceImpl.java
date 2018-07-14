@@ -21,4 +21,9 @@ public class MovieServiceImpl implements MovieService {
     public List<Movie> getMovies() {
         return movieDao.getMovies();
     }
+
+    @Override
+    public List<Movie> getMovieByKeyWord(String keyWord) {
+        return movieDao.getMovieByKeyWord("%" + keyWord + "%");
+    }
 }

@@ -27,4 +27,10 @@ public class MovieController {
         return movieService.getMovies();
     }
 
+    @RequestMapping("searchResult")
+    public String getMovieByKeyWord(@RequestParam(name="keyWord")String keyWord, Map<String,Object> map) {
+        map.put("results", movieService.getMovieByKeyWord(keyWord));
+        return "searchResult";
+    }
+
 }

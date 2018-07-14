@@ -21,6 +21,17 @@
 				})
 			})
 		</script>
+		<script>
+			function doSearch() {
+                var input = document.getElementById('search-input').value;
+                if (input === '') {
+                    alert("请输入关键字！");
+				}
+				else {
+                    window.location.href = 'searchResult?keyWord=' + input;
+				}
+            }
+		</script>
 	</head>
 
 	<body>
@@ -202,14 +213,13 @@
 			</svg>
 			<main class="main-wrap">
 				<div class="search">
-					<button id="searchCloseBtn" class="btn btn--search-close" aria-label="Close search form"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
-					<form class="search__form" action="">
+					<button id="searchCloseBtn" class="btn btn--search-close" aria-label="Close search form"></button>
+					<div class="search__form" >
 						<input id="search-input" class="search__input" name="search" type="search" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-						<button id="searchBtn" class="btn btn--search"><svg class="icon icon--search"><use xlink:href="#icon-search"></use></svg></button>
-					</form>
+						<button id="searchBtn" class="btn btn--search" onclick="doSearch()"><svg class="icon icon--search"><use xlink:href="#icon-search"></use></svg></button>
+					</div>
 					<div class="search__suggestion">
-						<h3>Press esc to cancel searching</h3>
-						<h3>Input some key words to search movies</h3>
+						<h3>按下esc退出搜索</h3>
 					</div>
 				</div>
 			</main>
