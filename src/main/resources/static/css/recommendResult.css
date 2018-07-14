@@ -1,0 +1,207 @@
+html, body {
+    margin:0 auto;
+    width: 100%;
+    height: 100%;
+    min-width: 1920px;
+    min-height: 1080px;
+}
+
+body {
+	overflow-x: auto;
+}
+
+.main {
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.main_top {
+	position: relative;
+	margin: 0 1px;
+	top: 2px;
+	height: 60px;
+	border: 2px solid;
+	border-radius: 5px;
+	background-color: #5E5E5E;
+}
+
+.main_top .userInfo {
+	position: relative;
+	height: 100%;
+}
+
+.main_top .userInfo a {
+	position: relative;
+	top: 16px;
+	left: 10px;
+	height: 100%;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+}
+
+.main_top .logoBox {
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+.main_top .logoBox p {
+	margin-top: 16px;
+	margin-left: 50px;
+	font-size: 16px;
+	color: white;
+}
+
+.main_top .logoBox a {
+	margin: auto;
+}
+
+.main_top .logoBox img {
+	margin: auto;
+	width: 50px;
+	height: 50px;
+	border: 1px solid darkgray;
+}
+
+.main_bottom {
+	position: relative;
+	margin: 0 auto;
+	width: 50%;
+	height: auto;
+	margin-top: 150px;
+}
+
+.main_bottom .displayRow {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	margin-top: 40px;
+	display: flex;
+}
+
+.main_bottom .displayRow .displayLeft,
+.main_bottom .displayRow .displayRight {
+	position: relative;
+	margin: 0 auto;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	box-shadow: darkgrey 0px 3px 6px 0px;
+}
+
+.main_bottom .displayRow .filmInfo {
+	position: relative;
+	margin: auto 0;
+	width: 45%;
+	height: 100px;
+	top: 10px;
+}
+
+.main_bottom .displayRow .displayLeft .filmInfo {
+	left: 10px;
+}
+
+.main_bottom .displayRow .displayRight .filmInfo {
+	left: -10px;
+}
+
+.main_bottom .displayRow .filmInfo div {
+	position: relative;
+	padding: 2px;
+	top: 10px;
+}
+
+.main_bottom .displayRow .displayLeft .filmInfo div {
+	text-align: right;
+}
+
+.main_bottom .displayRow .displayRight .filmInfo div {
+	text-align: left;
+}
+
+.main_bottom .displayRow .filmInfo .filmName {
+	font-size: 18px;
+}
+
+.main_bottom .displayRow .filmInfo .filmName a {
+	text-decoration: none;
+}
+
+.main_bottom .displayRow .filmInfo .actors {
+	font-size: 16px;
+}
+
+.main_bottom .displayRow .filmWrapper {
+  	position: relative;
+  	margin: auto;
+  	width: 150px;
+  	height: 210px;
+  	background: white;
+  	border-radius: 5px;
+  	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+  	-moz-box-shadow:    0px 0px 4px rgba(0,0,0,0.3);
+  	box-shadow:         0px 0px 4px rgba(0,0,0,0.3);
+  	background-size: 100%;
+  	background-repeat: no-repeat;
+}
+ 
+.main_bottom .displayRow .filmWrapper .ribbon-wrapper-green {
+  	width: 80px;
+  	height: 80px;
+  	overflow: hidden;
+  	position: absolute;
+  	top: -3px;
+  	right: -3px;
+}
+ 
+.main_bottom .displayRow .filmWrapper .ribbon-green {
+  	font: bold 15px Sans-Serif;
+  	color: #333;
+  	text-align: center;
+  	text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  	-webkit-transform: rotate(45deg);
+ 	-moz-transform:    rotate(45deg);
+  	-ms-transform:     rotate(45deg);
+  	-o-transform:      rotate(45deg);
+  	position: relative;
+  	padding: 5px 0;
+  	left: -5px;
+  	top: 15px;
+  	width: 120px;
+  	background-color: #BFDC7A;
+  	background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+	background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
+	color: #6a6340;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+	-moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+	box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+ 
+.main_bottom .displayRow .filmWrapper .ribbon-green:before, .ribbon-green:after {
+	content: "";
+	border-top:   3px solid #6e8900;  
+	border-left:  3px solid transparent;
+	border-right: 3px solid transparent;
+	position: absolute;
+	bottom: -3px;
+}
+ 
+.main_bottom .displayRow .filmWrapper .ribbon-green:before {
+  	left: 0;
+}
+
+.main_bottom .displayRow .filmWrapper .ribbon-green:after {
+  	right: 0;
+}
+
+.main_bottom .changeBtn {
+	position: relative;
+	margin-top: 40px;
+	width: auto;
+	text-align: center;
+}
