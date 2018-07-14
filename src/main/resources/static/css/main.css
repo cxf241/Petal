@@ -163,7 +163,7 @@ body {
 	margin: 0px;
 	width: 100%;
 	height: 100%;
-	left: -59px;
+	left: -64px;
 }
 
 .main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper1 .recommendDisplsyPart1 .recommendMovie {
@@ -197,7 +197,7 @@ body {
 	margin: 0px;
 	width: 100%;
 	height: 100%;
-	left: -59px;
+	left: -64px;
 }
 
 .main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper2 .recommendDisplsyPart2 .recommendMovie {
@@ -231,7 +231,7 @@ body {
 	margin: 0px;
 	width: 100%;
 	height: 100%;
-	left: -59px;
+	left: -64px;
 }
 
 .main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper3 .recommendDisplsyPart3 .recommendMovie {
@@ -265,7 +265,7 @@ body {
 	margin: 0px;
 	width: 100%;
 	height: 100%;
-	left: -59px;
+	left: -64px;
 }
 
 .main .main_bottom .rec_refresh .recommendDisplsy #iSlider-wrapper4 .recommendDisplsyPart4 .recommendMovie {
@@ -397,4 +397,12 @@ a.recommendMovieLink:visited{
 /*除去图片轮转前面的小黑点*/
 ul li{
 	list-style-type: none;
+}
+
+
+#iSlider-wrapper1,
+#iSlider-wrapper2,
+#iSlider-wrapper3,
+#iSlider-wrapper4 {
+	overflow: hidden;
 }

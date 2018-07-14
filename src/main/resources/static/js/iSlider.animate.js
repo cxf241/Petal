@@ -51,7 +51,7 @@
                 dom.style.cssText += iSlider.styleProp('backface-visibility') + ':hidden;' + iSlider.styleProp('transform-style') + ':preserve-3d;' + 'position:absolute;';
 
                 // TODO: overflow... I dont understand why there are many differences between ios and desktop. Maybe they have different interpretations of Perspective
-                iSlider.setStyle(dom, 'transform', 'rotate' + rotateDirect + '(' + 90 * (offset / scale + i - 1) + 'deg) translateZ(' + (0.889 * scale / 2) + 'px) scale(0.889)');
+                iSlider.setStyle(dom, 'transform', 'rotate' + rotateDirect + '(' + 90 * (offset / scale + i - 1) + 'deg) translateX(200px) translateZ(' + (0.889 * scale / 2) + 'px) scale(0.889)');
             }
 
             rotate.effect = iSlider.styleProp('transform');
