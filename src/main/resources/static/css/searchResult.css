@@ -152,6 +152,7 @@ body {
 
 .main_bottom .results .filmBox .film .filmInfo {
 	position: relative;
+	width: 80%;
 	height: 100px;
 	left: 50px;
 	top: 10px;

@@ -12,10 +12,13 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserDao {
-    @Insert("INSERT INTO user(uname,upwd) VALUES(#{uname},#{upwd})")
+
+    //加入新用户
+    @Insert("INSERT INTO user(uname,upwd,dname) VALUES(#{uname},#{upwd},#{dname})")
     int addUser(User user);
 
-    @Select("SELECT * FROM user WHERE uname=#{uname}")
+    //查找用户
+    @Select("SELECT * FROM user WHERE uname=#{uname} AND upwd=#{upwd}")
     @ResultType(User.class)
     List<User> findUser(User user);
 }
