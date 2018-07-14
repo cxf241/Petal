@@ -89,6 +89,8 @@ body {
 	height: 100%;
 	display: flex;
 	box-shadow: darkgrey 0px 3px 6px 0px;
+	background-color: #C0C0C0;
+  	border-radius: 5px;
 }
 
 .main_bottom .displayRow .filmInfo {
