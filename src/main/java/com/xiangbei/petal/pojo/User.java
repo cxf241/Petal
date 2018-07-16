@@ -1,7 +1,7 @@
 package com.xiangbei.petal.pojo;
 
 public class User {
-    private String doubanName;
+    private String dname;
     private String uname;
     private String upwd;
 
@@ -21,11 +21,11 @@ public class User {
         this.upwd = upwd;
     }
 
-    public String getDoubanName() {
-        return doubanName;
+    public String getDName() {
+        return dname;
     }
 
-    public void setDoubanName(String doubanName) {
-        this.doubanName = doubanName;
+    public void setDName(String dname) {
+        this.dname = dname;
     }
 }

@@ -21,4 +21,10 @@ public interface UserDao {
     @Select("SELECT * FROM user WHERE uname=#{uname} AND upwd=#{upwd}")
     @ResultType(User.class)
     List<User> findUser(User user);
+
+    //查找豆瓣用户id
+    @Select("SELECT id FROM banuser WHERE name like binary(#{name})")
+    @ResultType(int.class)
+    List<Integer> findDBUser(String name);
+
 }

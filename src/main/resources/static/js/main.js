@@ -33,6 +33,7 @@ function doRegister() {
     var name = document.getElementById("registerName");
     var pwd1 = document.getElementById("registerPasswd");
     var pwd2 = document.getElementById("resurePasswd");
+    var dname = document.getElementById("doubanName");
     if (name.value == "" || pwd1.value == "" || pwd2.value == "") {
         alert("请输入完整信息！");
         return;
@@ -47,7 +48,8 @@ function doRegister() {
     $.post("/doRegister",
         {
             uname: name.value,
-            upwd: pwd1.value
+            upwd: pwd1.value,
+            dname: dname.value
         },
         function(data, status){
             if (data == true) {
@@ -77,7 +79,7 @@ function doLogin() {
     $.post("/doLogin",
 		{
             uname: name.value,
-            upwd: pwd.value
+            upwd: pwd.value,
 		},
 		function(data, status){
             if (data == true) {
