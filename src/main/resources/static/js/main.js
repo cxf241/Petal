@@ -45,13 +45,15 @@ function doRegister() {
         return;
     }
 
-    $.post("/doRegister",
-        {
+    $.ajax({
+        type: "POST",
+        url: "/doRegister" ,//url
+        data: {
             uname: name.value,
             upwd: pwd1.value,
             dname: dname.value
         },
-        function(data, status){
+        success: function (result) {
             if (data == true) {
                 alert("注册成功！");
                 name.value = "";
@@ -65,7 +67,29 @@ function doRegister() {
                 pwd1.value = "";
                 pwd2.value = "";
             }
-        });
+        }
+    });
+    // $.post("/doRegister",
+    //     {
+    //         uname: name.value,
+    //         upwd: pwd1.value,
+    //         dname: dname.value
+    //     },
+    //     function(data, status){
+    //         if (data == true) {
+    //             alert("注册成功！");
+    //             name.value = "";
+    //             pwd1.value = "";
+    //             pwd2.value = "";
+    //             toLogin();//转到登录框
+    //         }
+    //         else {
+    //             alert("用户已存在！");
+    //             name.value = "";
+    //             pwd1.value = "";
+    //             pwd2.value = "";
+    //         }
+    //     });
 }
 
 function doLogin() {
