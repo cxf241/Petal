@@ -8,4 +8,5 @@ public interface MovieService {
     Movie getMovieById(String id);
     List<Movie> getMovies();
     List<Movie> getMovieByKeyWord(String keyWord);
+    List<Integer> getRecommend(int userId);
 }

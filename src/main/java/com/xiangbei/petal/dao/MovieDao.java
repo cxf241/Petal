@@ -24,4 +24,7 @@ public interface MovieDao {
     //根据关键字搜索电影
     @Select("SELECT id, name, url, rating, casts FROM movie WHERE name LIKE #{keyWord} OR type LIKE #{keyWord}")
     List<Movie> getMovieByKeyWord(String keyWord);
+
+    @Select("SELECT movieId from rating where userid=#{userId}")
+    List<Integer> getRecommend(int userId);
 }
