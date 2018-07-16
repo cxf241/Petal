@@ -8,16 +8,16 @@
 		<title>花瓣电影推荐</title>
 		<script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
 		<script>
-            $(document).ready(function() {
-                $.get("/user", function(data, status) {
-                    if(data.uname !== undefined)
-                        $("#user").text(data.uname + "的推荐结果");
-                    else {
-                        alert("请登录后查看推荐！");
-                        window.location.href = "main.html";
+			$(document).ready(function() {
+				$.get("/user", function(data, status) {
+					if(data.uname !== undefined)
+						$("#user").text(data.uname + "的推荐结果");
+					else {
+						alert("请登录后查看推荐！");
+						window.location.href = "main.html";
 					}
-                })
-            })
+				})
+			})
 		</script>
 	</head>
 
@@ -72,80 +72,73 @@
 					$.ajax({
 						url: "/recommend",
 						async: false,
-							success: function(data) {
+						success: function(data) {
 							for(var i = 0; i < data.length; i += 4) {
 								list1.push({
 									content: '<div class="filmInfo">' +
-                                    '<div class="filmName">' +
-                                    '<a href="filmInfo?id=' + data[i].id + '">' + data[i].name +'</a>' +
-                                    '</div>' +
-                                    '<div class="actors">' + data[i].casts +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<div class="filmWrapper" style="background-image: url(' + data[i].url +')">' +
-                                    '<div class="ribbon-wrapper-green">' +
-                                    '<div class="ribbon-green">'+ data[i].rating +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>'
-                                    
+										'<div class="filmName">' +
+										'<a href="filmInfo?id=' + data[i].id + '">' + data[i].name + '</a>' +
+										'</div>' +
+										'<div class="actors">' + data[i].casts +
+										'</div>' +
+										'</div>' +
+										'<div class="filmWrapper" style="background-image: url(' + data[i].url + ')">' +
+										'<div class="ribbon-wrapper-green">' +
+										'<div class="ribbon-green">' + data[i].rating +
+										'</div>' +
+										'</div>' +
+										'</div>'
+
 								});
 								list2.push({
-									content: '<div class="filmWrapper" style="background-image: url(' + data[i+1].url +')">' +
-                                    '<div class="ribbon-wrapper-green">' +
-                                    '<div class="ribbon-green">'+ data[i+1].rating +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<div class="filmInfo">' +
-                                    '<div class="filmName">' +
-                                    '<a href="filmInfo?id=' + data[i+1].id + '">' + data[i+1].name +'</a>' +
-                                    '</div>' +
-                                    '<div class="actors">' + data[i+1].casts +
-                                    '</div>' +
-                                    '</div>'
+									content: '<div class="filmWrapper" style="background-image: url(' + data[i + 1].url + ')">' +
+										'<div class="ribbon-wrapper-green">' +
+										'<div class="ribbon-green">' + data[i + 1].rating +
+										'</div>' +
+										'</div>' +
+										'</div>' +
+										'<div class="filmInfo">' +
+										'<div class="filmName">' +
+										'<a href="filmInfo?id=' + data[i + 1].id + '">' + data[i + 1].name + '</a>' +
+										'</div>' +
+										'<div class="actors">' + data[i + 1].casts +
+										'</div>' +
+										'</div>'
 								});
 								list3.push({
 									content: '<div class="filmInfo">' +
-                                    '<div class="filmName">' +
-                                    '<a href="filmInfo?id=' + data[i +2].id + '">' + data[i+2].name +'</a>' +
-                                    '</div>' +
-                                    '<div class="actors">' + data[i+2].casts +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<div class="filmWrapper" style="background-image: url(' + data[i+2].url +')">' +
-                                    '<div class="ribbon-wrapper-green">' +
-                                    '<div class="ribbon-green">'+ data[i+2].rating +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>'
-                                    
+										'<div class="filmName">' +
+										'<a href="filmInfo?id=' + data[i + 2].id + '">' + data[i + 2].name + '</a>' +
+										'</div>' +
+										'<div class="actors">' + data[i + 2].casts +
+										'</div>' +
+										'</div>' +
+										'<div class="filmWrapper" style="background-image: url(' + data[i + 2].url + ')">' +
+										'<div class="ribbon-wrapper-green">' +
+										'<div class="ribbon-green">' + data[i + 2].rating +
+										'</div>' +
+										'</div>' +
+										'</div>'
+
 								});
 								list4.push({
-									content: '<div class="filmWrapper" style="background-image: url(' + data[i+3].url +')">' +
-                                    '<div class="ribbon-wrapper-green">' +
-                                    '<div class="ribbon-green">'+ data[i+3].rating +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<div class="filmInfo">' +
-                                    '<div class="filmName">' +
-                                    '<a href="filmInfo?id=' + data[i+3].id + '">' + data[i+3].name +'</a>' +
-                                    '</div>' +
-                                    '<div class="actors">' + data[i+3].casts +
-                                    '</div>' +
-                                    '</div>'
+									content: '<div class="filmWrapper" style="background-image: url(' + data[i + 3].url + ')">' +
+										'<div class="ribbon-wrapper-green">' +
+										'<div class="ribbon-green">' + data[i + 3].rating +
+										'</div>' +
+										'</div>' +
+										'</div>' +
+										'<div class="filmInfo">' +
+										'<div class="filmName">' +
+										'<a href="filmInfo?id=' + data[i + 3].id + '">' + data[i + 3].name + '</a>' +
+										'</div>' +
+										'<div class="actors">' + data[i + 3].casts +
+										'</div>' +
+										'</div>'
 								});
 							}
 						}
 					});
-
-
-
-							content:
-								
-
-
 					var S1 = new iSlider(document.getElementById('iSlider-wrapper1'), list1, {
 						isLooping: 1,
 						isOverspread: 1,
@@ -194,7 +187,11 @@
 
 				<div class="changeBtn">
 					<button class="btn btn-success" onclick="S1.slideNext(), S2.slidePrev(), S3.slideNext(), S4.slidePrev()">换一批</button>
-					<!--因为左边模块轮转顺序为1-2-3-4-1，右边模块轮转顺序为1-4-3-2-1，所以在先后顺序有所差异-->
+
+					<div class="test1" style="background-image: url(data[i].url)"></div>
+					<div class="test2" style="background-image: url(data[i+1].url)"></div>
+					<div class="test3" style="background-image: url(data[i+2].url)"></div>
+					<div class="test4" style="background-image: url(data[i+3].url)"></div>
 				</div>
 			</div>
 		</div>
