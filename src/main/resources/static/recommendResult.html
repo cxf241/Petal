@@ -75,19 +75,20 @@
 							success: function(data) {
 							for(var i = 0; i < data.length; i += 4) {
 								list1.push({
-									content: '<div class="filmWrapper" style="background-image: url(' + data[i].url +')">' +
-                                    '<div class="ribbon-wrapper-green">' +
-                                    '<div class="ribbon-green">'+ data[i].rating +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<div class="filmInfo">' +
+									content: '<div class="filmInfo">' +
                                     '<div class="filmName">' +
                                     '<a href="filmInfo?id=' + data[i].id + '">' + data[i].name +'</a>' +
                                     '</div>' +
                                     '<div class="actors">' + data[i].casts +
                                     '</div>' +
+                                    '</div>' +
+                                    '<div class="filmWrapper" style="background-image: url(' + data[i].url +')">' +
+                                    '<div class="ribbon-wrapper-green">' +
+                                    '<div class="ribbon-green">'+ data[i].rating +
+                                    '</div>' +
+                                    '</div>' +
                                     '</div>'
+                                    
 								});
 								list2.push({
 									content: '<div class="filmWrapper" style="background-image: url(' + data[i+1].url +')">' +
@@ -105,19 +106,20 @@
                                     '</div>'
 								});
 								list3.push({
-									content: '<div class="filmWrapper" style="background-image: url(' + data[i+2].url +')">' +
-                                    '<div class="ribbon-wrapper-green">' +
-                                    '<div class="ribbon-green">'+ data[i+2].rating +
-                                    '</div>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<div class="filmInfo">' +
+									content: '<div class="filmInfo">' +
                                     '<div class="filmName">' +
                                     '<a href="filmInfo?id=' + data[i +2].id + '">' + data[i+2].name +'</a>' +
                                     '</div>' +
                                     '<div class="actors">' + data[i+2].casts +
                                     '</div>' +
+                                    '</div>' +
+                                    '<div class="filmWrapper" style="background-image: url(' + data[i+2].url +')">' +
+                                    '<div class="ribbon-wrapper-green">' +
+                                    '<div class="ribbon-green">'+ data[i+2].rating +
+                                    '</div>' +
+                                    '</div>' +
                                     '</div>'
+                                    
 								});
 								list4.push({
 									content: '<div class="filmWrapper" style="background-image: url(' + data[i+3].url +')">' +
