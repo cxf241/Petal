@@ -16,8 +16,12 @@
 		<script>
 			$(document).ready(function() {
 				$.get("/user", function(data, status) {
-					if(data.uname !== undefined)
-						$("#loginState").html("<a>欢迎" + data.uname + "</a><br><a href='/doLogout'>注销</a>")
+					if(data.uname !== undefined) {
+                        $("#loginState").html("<a>欢迎" + data.uname + "</a><br><a href='/doLogout'>注销</a>");
+                        $(".toLogin").hide();
+                    }
+					else
+					    $(".toRecommend").hide();
 				})
 			})
 		</script>

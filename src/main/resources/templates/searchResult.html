@@ -6,6 +6,15 @@
 		<title>花瓣电影</title>
 		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="/css/searchResult.css" />
+		<script src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
+		<script>
+            $(document).ready(function() {
+                $.get("/user", function(data, status) {
+                    if(data.uname !== undefined)
+                        $("#user").text(data.uname);
+                })
+            })
+		</script>
 		<script>
 			function doSearch() {
 				var input = document.getElementById("searchTxt").value;
@@ -24,7 +33,7 @@
 			<div class="main_top row">
 				<!-- 用户信息 -->
 				<div class="userInfo col-xs-2">
-					<a id="user">用户1</a>
+					<a id="user">未登录</a>
 				</div>
 				
 				<!-- logo -->
@@ -65,7 +74,8 @@
 					<div class="searchInfo">
 						结果
 					</div>
-					<div class="noResult">
+
+					<div class="noResult" th:if="${results.size()+ lt 1}">
 						无结果
 					</div>
 					

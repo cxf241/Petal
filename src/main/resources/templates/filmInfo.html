@@ -7,6 +7,15 @@
 		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="/css/filmInfo.css" />
+		<script src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
+		<script>
+            $(document).ready(function() {
+                $.get("/user", function(data, status) {
+                    if(data.uname !== undefined)
+                        $("#user").text(data.uname);
+                })
+            })
+		</script>
 	</head>
 	
 	<body>
@@ -15,7 +24,7 @@
 			<div class="main_top row">
 				<!-- 用户信息 -->
 				<div class="userInfo col-xs-2">
-					<a id="user">用户1</a>
+					<a id="user">未登录</a>
 				</div>
 				
 				<!-- logo -->
