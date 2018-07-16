@@ -25,9 +25,9 @@ public class LogController {
         user.setUname(request.getParameter("uname"));
         user.setUpwd(request.getParameter("upwd"));
 
-        if (userService.findUser(user)) {//登录成功
+        if (userService.findUser(user) != null) {//登录成功
             //设置当前用户
-            session.setAttribute("currentUser",user);
+            session.setAttribute("currentUser",userService.findUser(user));
             return true;
         }else return false;
     }
@@ -36,10 +36,12 @@ public class LogController {
     @RequestMapping(value = "doRegister",method = RequestMethod.POST)
     public boolean register(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //可能有乱码问题
+        request.setCharacterEncoding("UTF-8");
         User user = new User();
         user.setUname(request.getParameter("uname"));
         user.setUpwd(request.getParameter("upwd"));
-        if (userService.findUser(user)) {
+        user.setDName(request.getParameter("dname"));
+        if (userService.findUser(user) != null) {
             return false;
         }
         else {

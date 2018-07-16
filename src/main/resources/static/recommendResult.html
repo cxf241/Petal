@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/recommendResult.css" />
+		<title>花瓣电影推荐</title>
+		<script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
+		<script>
+            $(document).ready(function() {
+                $.get("/user", function(data, status) {
+                    if(data.uname !== undefined)
+                        $("#user").text(data.uname + "的推荐结果");
+                    else {
+                        alert("请登录后查看推荐！");
+                        window.location.href = "main.html";
+					}
+                })
+            })
+		</script>
+	</head>
+
+	<body>
+		<div class="main">
+			<!-- 用户信息和logo -->
+			<div class="main_top row">
+				<!-- 用户信息 -->
+				<div class="userInfo col-xs-2">
+					<a id="user">未登录</a>
+				</div>
+
+				<!-- logo -->
+				<div class="logoBox col-xs-2 col-xs-offset-8">
+					<p>花瓣电影</p>
+					<a href="/main.html"><img src="/image/logo.png" /></a>
+				</div>
+			</div>
+
+			<!-- 推荐信息 -->
+			<div class="main_bottom">
+				<!-- 第一行 -->
+				<div class="displayRow">
+					<!-- 左上 -->
+					<div class="displayLeft" id="iSlider-wrapper1">
+
+					</div>
+					<!-- 右上 -->
+					<div class="displayRight" id="iSlider-wrapper2">
+
+					</div>
+				</div>
+
+				<!-- 第二行 -->
+				<div class="displayRow">
+					<!-- 左下 -->
+					<div class="displayLeft" id="iSlider-wrapper3">
+
+					</div>
+					<!-- 右下 -->
+					<div class="displayRight" id="iSlider-wrapper4">
+
+					</div>
+				</div>
+				<script type="text/javascript" src="js/iSlider.js"></script>
+				<script type="text/javascript" src="js/iSlider2.animate.js"></script>
+				<script id="show-code">
+					var list1 = [];
+					var list2 = [];
+					var list3 = [];
+					var list4 = [];
+					$.ajax({
+						url: "/recommend",
+						async: false,
+							success: function(data) {
+							for(var i = 0; i < data.length; i += 4) {
+								list1.push({
+									content: '<div class="filmWrapper" style="background-image: url(' + data[i].url +')">' +
+                                    '<div class="ribbon-wrapper-green">' +
+                                    '<div class="ribbon-green">'+ data[i].rating +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '<div class="filmInfo">' +
+                                    '<div class="filmName">' +
+                                    '<a href="filmInfo?id=' + data[i].id + '">' + data[i].name +'</a>' +
+                                    '</div>' +
+                                    '<div class="actors">' + data[i].casts +
+                                    '</div>' +
+                                    '</div>'
+								});
+								list2.push({
+									content: '<div class="filmWrapper" style="background-image: url(' + data[i+1].url +')">' +
+                                    '<div class="ribbon-wrapper-green">' +
+                                    '<div class="ribbon-green">'+ data[i+1].rating +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '<div class="filmInfo">' +
+                                    '<div class="filmName">' +
+                                    '<a href="filmInfo?id=' + data[i+1].id + '">' + data[i+1].name +'</a>' +
+                                    '</div>' +
+                                    '<div class="actors">' + data[i+1].casts +
+                                    '</div>' +
+                                    '</div>'
+								});
+								list3.push({
+									content: '<div class="filmWrapper" style="background-image: url(' + data[i+2].url +')">' +
+                                    '<div class="ribbon-wrapper-green">' +
+                                    '<div class="ribbon-green">'+ data[i+2].rating +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '<div class="filmInfo">' +
+                                    '<div class="filmName">' +
+                                    '<a href="filmInfo?id=' + data[i +2].id + '">' + data[i+2].name +'</a>' +
+                                    '</div>' +
+                                    '<div class="actors">' + data[i+2].casts +
+                                    '</div>' +
+                                    '</div>'
+								});
+								list4.push({
+									content: '<div class="filmWrapper" style="background-image: url(' + data[i+3].url +')">' +
+                                    '<div class="ribbon-wrapper-green">' +
+                                    '<div class="ribbon-green">'+ data[i+3].rating +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '<div class="filmInfo">' +
+                                    '<div class="filmName">' +
+                                    '<a href="filmInfo?id=' + data[i+3].id + '">' + data[i+3].name +'</a>' +
+                                    '</div>' +
+                                    '<div class="actors">' + data[i+3].casts +
+                                    '</div>' +
+                                    '</div>'
+								});
+							}
+						}
+					});
+
+
+
+							content:
+								
+
+
+					var S1 = new iSlider(document.getElementById('iSlider-wrapper1'), list1, {
+						isLooping: 1,
+						isOverspread: 1,
+						isAutoplay: 0,
+						animateTime: 800,
+						animateType: 'card',
+						duration: 1000,
+						isVertical: 0,
+						fillSeam: 1,
+						isTouchable: 0,
+					});
+					var S2 = new iSlider(document.getElementById('iSlider-wrapper2'), list2, {
+						isLooping: 1,
+						isOverspread: 1,
+						isAutoplay: 0,
+						animateTime: 800,
+						animateType: 'card',
+						duration: 1000,
+						isVertical: 0,
+						fillSeam: 1,
+						isTouchable: 0,
+					});
+					var S3 = new iSlider(document.getElementById('iSlider-wrapper3'), list3, {
+						isLooping: 1,
+						isOverspread: 1,
+						isAutoplay: 0,
+						animateTime: 800,
+						animateType: 'card',
+						duration: 1000,
+						isVertical: 0,
+						fillSeam: 1,
+						isTouchable: 0,
+					});
+					var S4 = new iSlider(document.getElementById('iSlider-wrapper4'), list4, {
+						isLooping: 1,
+						isOverspread: 1,
+						isAutoplay: 0,
+						animateTime: 800,
+						animateType: 'card',
+						duration: 1000,
+						isVertical: 0,
+						fillSeam: 1,
+						isTouchable: 0,
+					});
+				</script>
+
+				<div class="changeBtn">
+					<button class="btn btn-success" onclick="S1.slideNext(), S2.slidePrev(), S3.slideNext(), S4.slidePrev()">换一批</button>
+					<!--因为左边模块轮转顺序为1-2-3-4-1，右边模块轮转顺序为1-4-3-2-1，所以在先后顺序有所差异-->
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
