@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/userInfo.css" />
+		<script type="text/javascript" src="js/userInfo.js"></script>
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<title>用户1</title>
+	</head>
+	
+	<body>
+		<div class="main">
+			<!-- 用户名和logo -->
+			<div class="main_top row">
+				<!-- 用户名 -->
+				<div class="userInfo col-xs-2">
+					<a id="user">用户1</a>
+				</div>
+
+				<!-- logo -->
+				<div class="logoBox col-xs-2 col-xs-offset-8">
+					<p>花瓣电影</p>
+					<a href="/main.html"><img src="/image/logo.png" /></a>
+				</div>
+			</div>
+			
+			<!-- 用户相关信息 -->
+			<div class="main_bottom">
+				<!-- 标签页导航 -->
+				<ul class="nav nav-stacked">
+					<li class="active infoMenu">
+						<a href="#info" data-toggle="tab">编辑个人信息</a>
+					</li>
+					<li>
+						<a href="#collection" data-toggle="tab">收藏</a>
+					</li>
+					<li>
+						<a href="#gradeHistory" data-toggle="tab">评分记录</a>
+					</li>
+				</ul>
+				
+				<div class="tab-content">
+					<!-- 编辑个人信息 -->
+					<div class="tab-pane fade active in" id="info">
+						<!-- 编辑用户名 -->
+						<div class="modifyUserName">
+							<div class="userName">用户名：</div>
+							<div class="modifyNameBox">
+								<div class="input-group" id="nameInput">
+									<div id="name" style="font-size: 22px; margin-top: 5px;">用户1</div>
+									<button class="btn btn-success" onclick="toModifyName()">修改</button>
+								</div>
+								<button class="btn btn-success hidden" id="modifyNameBtn">修改用户名</button>
+							</div>
+						</div>
+						
+						<!-- 编辑密码 -->
+						<button class="btn btn-success" id="toModifyPasswdBtn" onclick="toModifyPasswd()">修改密码</button>
+						<div class="modifyPasswd hidden" id="modifyPasswd">
+							<div>
+								<div class="passwd">输入原密码：</div>
+								<div class="input-group">
+									<input class="form-control"  type="password" name="passwd" />
+								</div>
+							</div>
+							<div>
+								<div class="passwd">输入新密码：</div>
+								<div class="input-group">
+									<input class="form-control"  type="password" name="newPasswd" />
+								</div>
+							</div>
+							<div>
+								<div class="passwd">确认新密码：</div>
+								<div class="input-group">
+									<input class="form-control"  type="password" name="resureNewPasswd" />
+								</div>
+							</div>
+							<button class="btn btn-success">修改密码</button>
+						</div>
+					</div>
+					
+					<!-- 收藏 -->
+					<div class="tab-pane fade" id="collection">
+						<!-- 第一行 -->
+						<div class="displayRow">
+							<div class="film">
+								<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" /></a>
+								<div class="filmName">头号玩家</div>
+							</div>
+							<div class="film">
+								<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523632248.jpg" /></a>
+								<div class="filmName">厕所英雄</div>
+							</div>
+							<div class="film">
+								<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516914607.jpg" /></a>
+								<div class="filmName">湮灭</div>
+							</div>
+							<div class="film">
+								<a href="#"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2507572275.jpg" /></a>
+								<div class="filmName">无问西东</div>
+							</div>
+						</div>
+						
+						<!-- 第二行 -->
+						<div class="displayRow">
+							<div class="film">
+								<a href="#"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2512933684.jpg" /></a>
+								<div class="filmName">环太平洋：雷霆再起</div>
+							</div>
+							<div class="film">
+								<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg" /></a>
+								<div class="filmName">奇迹男孩</div>
+							</div>
+							<div class="film">
+								<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2514384737.jpg" /></a>
+								<div class="filmName">现在去见你</div>
+							</div>
+							<div class="film">
+								<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2522339208.jpg" /></a>
+								<div class="filmName">白牙</div>
+							</div>
+						</div>
+						
+						<!-- 分页 -->
+						<div class="pages">
+							<ul class="pagination pagination-lg">
+								<li><a href="#">&laquo;</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">&raquo;</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- 评分记录 -->
+					<div class="tab-pane fade" id="gradeHistory">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>电影</th>
+									<th>豆瓣评分</th>
+									<th>你的评分</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td id="gradeFilmName">环太平洋：雷霆再起</td>
+									<td>5.5</td>
+									<td>??</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</td>
+									<td>5.5</td>
+									<td>??</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<!-- 分页 -->
+						<div class="pages">
+							<ul class="pagination pagination-lg">
+								<li><a href="#">&laquo;</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">&raquo;</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
