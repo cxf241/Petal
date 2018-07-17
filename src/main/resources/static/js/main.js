@@ -69,27 +69,6 @@ function doRegister() {
             }
         }
     });
-    // $.post("/doRegister",
-    //     {
-    //         uname: name.value,
-    //         upwd: pwd1.value,
-    //         dname: dname.value
-    //     },
-    //     function(data, status){
-    //         if (data == true) {
-    //             alert("注册成功！");
-    //             name.value = "";
-    //             pwd1.value = "";
-    //             pwd2.value = "";
-    //             toLogin();//转到登录框
-    //         }
-    //         else {
-    //             alert("用户已存在！");
-    //             name.value = "";
-    //             pwd1.value = "";
-    //             pwd2.value = "";
-    //         }
-    //     });
 }
 
 function doLogin() {
@@ -113,7 +92,7 @@ function doLogin() {
                 window.location.href = "/main.html";
             }
             else {
-                alert("用户不存在！");
+                alert("用户不存在或用户与密码不匹配！");
                 name.value = "";
                 pwd.value = "";
             }

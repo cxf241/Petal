@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 	<head>
 		<meta charset="UTF-8">
 		<title th:text="${movie.name}"></title>
@@ -9,15 +9,15 @@
 		<link rel="stylesheet" type="text/css" href="/css/filmInfo.css" />
 		<script src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
 		<script>
-            $(document).ready(function() {
-                $.get("/user", function(data, status) {
-                    if(data.uname !== undefined)
-                        $("#user").text(data.uname);
-                })
-            })
+			$(document).ready(function() {
+				$.get("/user", function(data, status) {
+					if(data.uname !== undefined)
+						$("#user").text(data.uname);
+				})
+			})
 		</script>
 	</head>
-	
+
 	<body>
 		<div class="main">
 			<!-- 用户信息和logo -->
@@ -26,26 +26,26 @@
 				<div class="userInfo col-xs-2">
 					<a id="user">未登录</a>
 				</div>
-				
+
 				<!-- logo -->
 				<div class="logoBox col-xs-2 col-xs-offset-8">
 					<p>花瓣电影</p>
 					<a href="/main.html"><img src="/image/logo.png" /></a>
 				</div>
 			</div>
-			
+
 			<!-- 电影信息 -->
-			<div class="main_bottom">
+			<div class="main_medium">
 				<!-- 电影名 -->
 				<strong><p id="filmName" th:text="${movie.name}"></p></strong>
 				<!-- 详细信息 -->
 				<div class="filmInfoBox">
 					<!-- 电影图片、评分 -->
 					<div class="img_gradeBox">
-						<img th:attr="src=${movie.url}"/>
+						<img th:attr="src=${movie.url}" />
 						<p id="grade"><strong>豆瓣评分：</strong><strong th:text="${movie.rating}"></strong></p>
 					</div>
-					
+
 					<!-- 其他信息、剧情简介 -->
 					<div class="otherInfo_storyBox">
 						<!-- 其他信息 -->
@@ -56,44 +56,44 @@
 									<strong>导演：</strong>
 									<span class="attr" id="director" th:text="${movie.director}">文牧野</span>
 								</span>
-								
+
 								<!-- 主演 -->
 								<span class="infoBox">
 									<strong>主演：</strong>
 									<span class="attr" id="actors" th:text="${movie.casts}">
 									</span>
 								</span>
-								
+
 								<!-- 类型 -->
 								<span class="infoBox">
 									<strong>类型：</strong>
 									<span class="attr" id="types" th:text="${movie.type}">
 									</span>
 								</span>
-								
+
 								<!-- 地区 -->
 								<span class="infoBox">
 									<strong>地区：</strong>
 									<span class="attr" id="area" th:text="${movie.area}"></span>
 								</span>
 							</div>
-							
+
 							<!-- 垂直分割线 -->
 							<div class="vr"></div>
-							
+
 							<div class="otherInfoBox2">
 								<!-- 语言 -->
 								<span class="infoBox">
 									<strong>语言：</strong>
 									<span class="attr" id="language" th:text="${movie.language}"></span>
 								</span>
-								
+
 								<!-- 上映日期 -->
 								<span class="infoBox">
 									<strong>上映日期：</strong>
 									<span class="attr" id="date" th:text="${movie.year}"></span>
 								</span>
-								
+
 								<!-- 片长 -->
 								<span class="infoBox">
 									<strong>片长：</strong>
@@ -101,22 +101,55 @@
 								</span>
 							</div>
 						</div>
-						
+
 						<!-- 水平分割线 -->
 						<hr id="hr1" />
-						
+
 						<!-- 剧情简介 -->
 						<div class="storyBox">
 							<div><strong>剧情简介</strong></div>
 							<p id="story" th:text="${movie.info}"> </p>
 						</div>
+						<hr id="hr1" />
 					</div>
 				</div>
 			</div>
-		
-		<div class="similarRecommand">
-			<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
-		</div>
+			
+			<div class="main_bottom">
+				
+				<div class="evaluate">
+					<!--用户对电影的评分-->
+					<h3>对该电影评分</h3>
+					<h3>⭐⭐⭐⭐⭐</h3>
+				</div>
+				
+				<!--相似电影-->
+				<div class="similarRecommand">
+					<h3 class="similarRecommandtxt">喜欢这部电影的人也喜欢：</h3>
+					<!--相似电影1-->
+					<div class="similarRecommandMovie1">
+						<a href="filmInfo?id=26654498"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523592367.webp" /></a>
+						<a href="filmInfo?id=26654498" class="similarRecommandMovieName">爱你，西蒙</a>
+					</div>
+					<!--相似电影2-->
+					<div class="similarRecommandMovie2">
+						<a href="filmInfo?id=26654498"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523592367.webp" /></a>
+						<a href="filmInfo?id=26654498" class="similarRecommandMovieName">爱你，西蒙</a>
+					</div>
+					<!--相似电影3-->
+					<div class="similarRecommandMovie3">
+						<a href="filmInfo?id=26654498"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523592367.webp" /></a>
+						<a href="filmInfo?id=26654498" class="similarRecommandMovieName">爱你，西蒙</a>
+					</div>
+					<!--相似电影4-->
+					<div class="similarRecommandMovie4">
+						<a href="filmInfo?id=26654498"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523592367.webp" /></a>
+						<a href="filmInfo?id=26654498" class="similarRecommandMovieName">爱你，西蒙</a>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</body>
+
 </html>

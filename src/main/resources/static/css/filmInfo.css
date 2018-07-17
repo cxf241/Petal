@@ -63,6 +63,7 @@ body {
 
 .main_top .logoBox a {
 	margin: auto;
+	top: -1px;
 }
 
 .main_top .logoBox img {
@@ -72,14 +73,14 @@ body {
 	border: 1px solid darkgray;
 }
 
-.main_bottom {
+.main_medium {
 	position: relative;
 	margin: 0 auto;
 	top: 50px;
 	height: 450px;
 }
 
-.main_bottom #filmName {
+.main_medium #filmName {
 	position: relative;
 	text-align: center;
 	font-size: 32px;
@@ -190,8 +191,78 @@ body {
 	white-space: normal
 }
 
-.similarRecommand {
+.main .main_bottom {
+	position: absolute;
+	display: flex;
+	top: 600px;
+}
+
+.main .evaluate {
+	position: relative;
+	width: 25%;
+	left: 240px;
+	text-align: center;
+}
+
+.main .similarRecommand {
 	position: relative;
 	display: flex;
-	top: 100px;
+	height: 220px;
+	/*    width: 632px;*/
+	width: 75%;
+	left: 200px;
+	/*background-color: steelblue;*/
+}
+
+.main .similarRecommand .similarRecommandtxt {
+	position: relative;
+	margin-left: 200px;
+	max-height: 20px;
+}
+
+.main .similarRecommand .similarRecommandMovie1,
+.similarRecommandMovie2,
+.similarRecommandMovie3,
+.similarRecommandMovie4 {
+	position: relative;
+	display: flex;
+	margin: 12px 19px auto 19px;
+}
+
+.main .similarRecommand .similarRecommandMovie1 img,
+.similarRecommandMovie2 img,
+.similarRecommandMovie3 img,
+.similarRecommandMovie4 img {
+	width: 120px;
+	height: 160px;
+	border: 1px solid black;
+}
+
+.main .similarRecommand .similarRecommandMovieName {
+	position: absolute;
+	text-align: center;
+	width: 120px;
+	top: 170px;
+}
+
+a:link {
+	color: black;
+}
+
+a {
+	position: relative;
+	color: black;
+	top: 9px;
+}
+
+a:hover {
+	position: relative;
+	color: black;
+	top: 9px;
+}
+
+a:visited {
+	position: relative;
+	color: black;
+	top: 9px;
 }
