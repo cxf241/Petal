@@ -24,6 +24,7 @@ public class MovieController {
     @RequestMapping("filmInfo")
     public String getMovieById(@RequestParam(name="id")String id, Map<String,Object> map) {
         map.put("movie", movieService.getMovieById(id));
+        map.put("recommends", movieService.getSimilarMovie(id));
         return "filmInfo";
     }
 
@@ -31,12 +32,6 @@ public class MovieController {
     @ResponseBody
     public List<Movie> getMovies() {
         return movieService.getMovies();
-    }
-
-    @RequestMapping("searchResult")
-    public String getMovieByKeyWord(@RequestParam(name="keyWord")String keyWord, Map<String,Object> map) {
-        map.put("results", movieService.getMovieByKeyWord(keyWord));
-        return "searchResult";
     }
 
     @RequestMapping("/recommend")
@@ -50,4 +45,15 @@ public class MovieController {
         }
         return movies;
     }
+
+    @RequestMapping("searchResult")
+    public String getMovieByKeyWordPage(@RequestParam(name="keyWord")String keyWord, @RequestParam(name="page", defaultValue="1")int page, Map<String,Object> map) {
+        int total = movieService.getTotalCount(keyWord);
+        map.put("keyWord", keyWord);
+        map.put("currentPage", page);
+        map.put("totalPage", total % 10 == 0 ? total / 10 : total / 10 + 1);
+        map.put("results", movieService.getMovieByKeyWordPage(keyWord, page));
+        return "searchResult";
+    }
+
 }
