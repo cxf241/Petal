@@ -247,7 +247,7 @@ body {
 
 /*文本超出3行范围用…省略*/
 
-.main .similarRecommand .similarRecommandMovieName {
+.filmName {
 	word-break: break-all;
 	text-overflow: ellipsis;
 	overflow: hidden;
