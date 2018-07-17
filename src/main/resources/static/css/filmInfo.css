@@ -207,17 +207,15 @@ body {
 .main .similarRecommand {
 	position: relative;
 	display: flex;
-	height: 220px;
-	/*    width: 632px;*/
+	height: 270px;
 	width: 75%;
-	left: 200px;
-	/*background-color: steelblue;*/
+	left: 320px;
 }
 
 .main .similarRecommand .similarRecommandtxt {
 	position: relative;
-	margin-left: 200px;
 	max-height: 20px;
+	width: 500px;
 }
 
 .main .similarRecommand .similarRecommandMovie1,
@@ -243,6 +241,19 @@ body {
 	text-align: center;
 	width: 120px;
 	top: 170px;
+	font-size: 10px;
+}
+
+
+/*文本超出3行范围用…省略*/
+
+.main .similarRecommand .similarRecommandMovieName {
+	word-break: break-all;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
 }
 
 a:link {
