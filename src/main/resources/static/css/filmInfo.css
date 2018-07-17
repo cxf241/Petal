@@ -346,7 +346,11 @@ body {
 
 /*文本超出3行范围用…省略*/
 
+<<<<<<< HEAD
 .main_bottom .similarRecommand .similarRecommandMovieName {
+=======
+.filmName {
+>>>>>>> a7844c384608f5e124cf6119a149a99ecee3c7f8
 	word-break: break-all;
 	text-overflow: ellipsis;
 	overflow: hidden;
