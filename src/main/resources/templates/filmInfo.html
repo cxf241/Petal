@@ -4,10 +4,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title th:text="${movie.name}"></title>
-		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="/css/filmInfo.css" />
-		<script src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css" />
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/filmInfo.css" />
+		<script src="../static/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
+		<script src="../static/js/filmInfo.js"></script>
 		<script>
 			$(document).ready(function() {
 				$.get("/user", function(data, status) {
@@ -54,7 +56,7 @@
 								<!-- 导演 -->
 								<span class="infoBox">
 									<strong>导演：</strong>
-									<span class="attr" id="director" th:text="${movie.director}">文牧野</span>
+									<span class="attr" id="director" th:text="${movie.director}"></span>
 								</span>
 
 								<!-- 主演 -->
@@ -119,11 +121,27 @@
 				
 				<div class="evaluate">
 					<!--收藏该电影-->
-					<h3>收藏该电影</h3>
-					<h3>❤♡</h3>
+					<div id="collectWrapper">
+						<div>收藏该电影</div>
+						<input type="radio" id="heart" name="heart" />
+						<label class="heart unchecked" for="heart" onclick="clickHeart()"></label>
+					</div>
 					<!--用户对电影的评分-->
-					<h3>对该电影评分</h3>
-					<h3>⭐⭐⭐⭐⭐</h3>
+					<h3 id="rateStatus">对该电影评分</h3>
+					<div id="ratingWrapper">
+						<input type="radio" id="star1" name="star" />
+						<label for="star1" onclick="clickStar1()"></label>
+						<input type="radio" id="star2" name="star" />
+						<label for="star2" onclick="clickStar2()"></label>
+						<input type="radio" id="star3" name="star" checked="checked" />
+						<label for="star3" onclick="clickStar3()"></label>
+						<input type="radio" id="star4" name="star" />
+						<label for="star4" onclick="clickStar4()"></label>
+						<input type="radio" id="star5" name="star" />
+						<label for="star5" onclick="clickStar5()"></label>
+					</div>
+					<div id="evaluation">还行</div>
+					<button class="btn btn-info" id="ratingBtn">提交评分</button>
 				</div>
 				
 				<!--相似电影-->
