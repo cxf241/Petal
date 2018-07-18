@@ -7,6 +7,10 @@ import java.util.List;
 public interface MovieService {
     Movie getMovieById(String id);
     List<Movie> getMovies();
-    List<Movie> getMovieByKeyWord(String keyWord);
     List<Integer> getRecommend(int userId);
+
+    Integer getTotalCount(String keyWord);
+    List<Movie> getMovieByKeyWordPage(String keyWord, int page);
+
+    List<Movie> getSimilarMovie(String id);
 }

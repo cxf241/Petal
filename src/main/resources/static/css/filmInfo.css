@@ -188,7 +188,12 @@ body {
 	text-indent: 2em;
 	font-size: 16px;
 	word-break: break-all;
-	white-space: normal
+	white-space: normal;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .main_bottom {
@@ -207,7 +212,7 @@ body {
 .main_bottom .evaluate #collectWrapper label,
 .main_bottom .evaluate #ratingWrapper label {
 	cursor: pointer;
-  	font-size: 40px;
+	font-size: 40px;
 	display: block;
 	width: 50px;
 	height: 50px;
@@ -224,40 +229,40 @@ body {
 .main_bottom .evaluate #collectWrapper label:before,
 .main_bottom .evaluate #ratingWrapper label:before {
 	display: inline;
-  	width: auto;
-  	height: auto;
-  	line-height: normal;
-  	vertical-align: baseline;
-  	margin-top: 0;
-  	font-family: FontAwesome;
-  	font-weight: normal;
-  	font-style: normal;
-  	text-decoration: inherit;
-  	-webkit-font-smoothing: antialiased;
+	width: auto;
+	height: auto;
+	line-height: normal;
+	vertical-align: baseline;
+	margin-top: 0;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
 }
 
 .main_bottom .evaluate #collectWrapper {
 	display: flex;
 }
 
-.main_bottom .evaluate #collectWrapper > div {
+.main_bottom .evaluate #collectWrapper>div {
 	font-size: 24px;
 	margin-left: 90px;
 	margin-top: 13px;
 }
 
 .main_bottom .evaluate #collectWrapper input {
-  	display: none;
+	display: none;
 }
 
 .main_bottom .evaluate #collectWrapper label {
-  	color: red;
+	color: red;
 }
 
 .main_bottom .evaluate #collectWrapper label:hover {
-  	font-size: 50px;
-  	color: #E85454;
-  	text-shadow: 0 0 5px #b9c9d8;
+	font-size: 50px;
+	color: #E85454;
+	text-shadow: 0 0 5px #b9c9d8;
 }
 
 .main_bottom .evaluate #collectWrapper .checked:before {
@@ -269,29 +274,29 @@ body {
 }
 
 .main_bottom .evaluate #ratingWrapper {
-  	display: inline-block;
+	display: inline-block;
 }
 
 .main_bottom .evaluate #ratingWrapper input {
-  	display: none;
+	display: none;
 }
 
 .main_bottom .evaluate #ratingWrapper label {
-  	color: yellow;
+	color: yellow;
 }
 
 .main_bottom .evaluate #ratingWrapper label:hover {
-  	font-size: 50px;
-  	color: #F5E79E;
-  	text-shadow: 0 0 5px #b9c9d8;
+	font-size: 50px;
+	color: #F5E79E;
+	text-shadow: 0 0 5px #b9c9d8;
 }
 
 .main_bottom .evaluate #ratingWrapper label:before {
-  	content: "\f005";
+	content: "\f005";
 }
 
-.main_bottom .evaluate #ratingWrapper input:checked + label ~ label:before {
-  	content: "\f006";
+.main_bottom .evaluate #ratingWrapper input:checked+label~label:before {
+	content: "\f006";
 }
 
 .main_bottom .evaluate #evaluation {
@@ -299,11 +304,11 @@ body {
 	font-weight: bolder;
 }
 
-.main_bottom .evaluate > .btn {
+.main_bottom .evaluate>.btn {
 	margin-top: 10px;
 }
 
-.main_bottom .similarRecommand {
+.main_bottom .similarRecommend {
 	position: relative;
 	display: flex;
 	height: 270px;
@@ -311,31 +316,31 @@ body {
 	left: 320px;
 }
 
-.main_bottom .similarRecommand .similarRecommandtxt {
+.main_bottom .similarRecommend .similarRecommendTxt {
 	position: relative;
 	max-height: 20px;
-	width: 500px;
+	width: 400px;
 }
 
-.main_bottom .similarRecommand .similarRecommandMovie1,
-.similarRecommandMovie2,
-.similarRecommandMovie3,
-.similarRecommandMovie4 {
+.main_bottom .similarRecommend .similarRecommendMovie1,
+.similarRecommendMovie2,
+.similarRecommendMovie3,
+.similarRecommendMovie4 {
 	position: relative;
 	display: flex;
 	margin: 12px 19px auto 19px;
 }
 
-.main_bottom .similarRecommand .similarRecommandMovie1 img,
-.similarRecommandMovie2 img,
-.similarRecommandMovie3 img,
-.similarRecommandMovie4 img {
+.main_bottom .similarRecommend .similarRecommendMovie1 img,
+.similarRecommendMovie2 img,
+.similarRecommendMovie3 img,
+.similarRecommendMovie4 img {
 	width: 120px;
 	height: 160px;
 	border: 1px solid black;
 }
 
-.main_bottom .similarRecommand .similarRecommandMovieName {
+.main_bottom .similarRecommend .similarRecommendMovieName {
 	position: absolute;
 	text-align: center;
 	width: 120px;
@@ -344,18 +349,14 @@ body {
 }
 
 
-/*文本超出3行范围用…省略*/
+/*文本超出2行范围用…省略*/
 
-<<<<<<< HEAD
-.main_bottom .similarRecommand .similarRecommandMovieName {
-=======
-.filmName {
->>>>>>> a7844c384608f5e124cf6119a149a99ecee3c7f8
+.main_bottom .similarRecommend .similarRecommendMovieName {
 	word-break: break-all;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 }
 
