@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="/css/searchResult.css" />
 		<script src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
+		<script src="/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 		<script>
             $(document).ready(function() {
                 $.get("/user", function(data, status) {
@@ -24,6 +25,13 @@
 				    window.location.href = "searchResult?keyWord=" + input;
 				}
             }
+            function goto(node) {
+			    var keyWord = document.getElementById("keyWord").textContent;
+			    var page = node.getAttribute("id");
+			    var currentPage = document.getElementById("currentPage").textContent;
+			    if (page != currentPage)
+			    	window.location.href = "searchResult?keyWord=" + keyWord + "&page=" + page;
+			}
 		</script>
 	</head>
 	
@@ -72,7 +80,12 @@
 				<div class="results">
 					<!-- 搜索信息 -->
 					<div class="searchInfo">
-						结果
+						搜索
+						<span th:text="${keyWord}" th:attr="id='keyWord'"></span>
+						的结果
+						&nbsp;&nbsp;第
+						<span th:text="${currentPage}" th:attr="id='currentPage'"></span>
+						页
 					</div>
 
 					<div class="noResult" th:if="${results.size() lt 1}">
@@ -92,6 +105,26 @@
 						<div class="shadow"></div>
 					</div>
 
+					<!-- 分页 -->
+
+					<div style="text-align: center">
+					<ul class="pagination pagination-lg" >
+						<li th:class="${currentPage==1}?'disabled' : ''"><a href="javascript:void(0)" th:attr="id=${1}" th:attrappend="onclick='goto(this)'">首页</a></li>
+						<li th:class="${currentPage==1}?'disabled' : ''"><a href="javascript:void(0)" th:attr="id=${currentPage - 1}" th:attrappend="onclick='goto(this)'">上一页</a></li>
+						<li th:if="${currentPage-3 >=1}" ><a href="javascript:void(0)" th:text="${currentPage -3}" th:attr="id=${currentPage - 3}" th:attrappend="onclick='goto(this)'">1</a></li>
+						<li th:if="${currentPage-2 >=1}" ><a href="javascript:void(0)" th:text="${currentPage -2}" th:attr="id=${currentPage - 2}" th:attrappend="onclick='goto(this)'">1</a></li>
+						<li th:if="${currentPage-1 >=1}" ><a href="javascript:void(0)" th:text="${currentPage -1}" th:attr="id=${currentPage - 1}" th:attrappend="onclick='goto(this)'">1</a></li>
+						<li class="active"><a href="javascript:void(0)" th:text="${currentPage}" th:attr="id=${currentPage}">1</a></li>
+						<li th:if="${currentPage+1 <=totalPage}" ><a href="javascript:void(0)" th:text="${currentPage +1}" th:attr="id=${currentPage + 1}" th:attrappend="onclick='goto(this)'">1</a></li>
+						<li th:if="${currentPage+2 <=totalPage}" ><a href="javascript:void(0)" th:text="${currentPage +2}" th:attr="id=${currentPage + 2}" th:attrappend="onclick='goto(this)'">1</a></li>
+						<li th:if="${currentPage+3 <=totalPage}" ><a href="javascript:void(0)" th:text="${currentPage +3}" th:attr="id=${currentPage + 3}" th:attrappend="onclick='goto(this)'">1</a></li>
+						<li th:class="${currentPage==totalPage}?'disabled' : ''" ><a href="javascript:void(0)" th:attr="id=${currentPage + 1}" th:attrappend="onclick='goto(this)'">下一页</a></li>
+						<li th:class="${currentPage==totalPage}?'disabled' : ''"><a href="javascript:void(0)" th:attr="id=${totalPage}" th:attrappend="onclick='goto(this)'">尾页</a></li>
+					</ul>
+						<div>总共<span style="font-size: 13px" th:text="${totalPage}"></span>页</div>
+						<br>
+						<br>
+					</div>
 				</div>
 			</div>
 		</div>

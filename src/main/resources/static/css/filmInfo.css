@@ -86,7 +86,7 @@ body {
 	font-size: 32px;
 }
 
-.main .filmInfoBox {
+.main_medium .filmInfoBox {
 	position: relative;
 	margin: 0 auto;
 	padding-top: 30px;
@@ -95,20 +95,20 @@ body {
 	display: flex;
 }
 
-.main .filmInfoBox .img_gradeBox {
+.main_medium .filmInfoBox .img_gradeBox {
 	position: relative;
 	width: 25%;
 	height: 360px;
 }
 
-.main .filmInfoBox .img_gradeBox img {
+.main_medium .filmInfoBox .img_gradeBox img {
 	position: relative;
 	margin: 0 auto;
 	width: 220px;
 	height: 300px;
 }
 
-.main .filmInfoBox .img_gradeBox #grade {
+.main_medium .filmInfoBox .img_gradeBox #grade {
 	position: relative;
 	width: 220px;
 	top: 15px;
@@ -116,14 +116,14 @@ body {
 	text-align: center;
 }
 
-.main .filmInfoBox .otherInfo_storyBox {
+.main_medium .filmInfoBox .otherInfo_storyBox {
 	position: relative;
 	left: 20px;
 	width: 75%;
 	height: 360px;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox {
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox {
 	position: relative;
 	width: 100%;
 	height: auto;
@@ -131,25 +131,25 @@ body {
 	display: flex;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox1,
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox2 {
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox1,
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox2 {
 	position: relative;
 	width: 45%;
 	height: 100%;
 	left: 10px;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox2 {
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox .otherInfoBox2 {
 	left: 30px;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .vr {
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox .vr {
 	width: 1px;
 	border: 1px;
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox {
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox {
 	position: relative;
 	padding: 5px 0;
 	height: auto;
@@ -158,7 +158,7 @@ body {
 	color: black;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox .attr {
+.main_medium .filmInfoBox .otherInfo_storyBox .otherInfoBox .infoBox .attr {
 	position: relative;
 	width: 65%;
 	height: auto;
@@ -166,45 +166,149 @@ body {
 	color: #000000;
 }
 
-.main .filmInfoBox .otherInfo_storyBox #hr1 {
+.main_medium .filmInfoBox .otherInfo_storyBox #hr1 {
 	border: 0;
 	border-bottom: 1px dashed #ccc;
 	background: #999;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .storyBox {
+.main_medium .filmInfoBox .otherInfo_storyBox .storyBox {
 	position: relative;
 	margin: 0 10px;
 	width: auto;
 	height: auto;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .storyBox div {
+.main_medium .filmInfoBox .otherInfo_storyBox .storyBox div {
 	font-size: 18px;
 	color: black;
 }
 
-.main .filmInfoBox .otherInfo_storyBox .storyBox #story {
+.main_medium .filmInfoBox .otherInfo_storyBox .storyBox #story {
 	text-indent: 2em;
 	font-size: 16px;
 	word-break: break-all;
-	white-space: normal
+	white-space: normal;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
-.main .main_bottom {
+.main_bottom {
 	position: absolute;
 	display: flex;
 	top: 600px;
 }
 
-.main .evaluate {
+.main_bottom .evaluate {
 	position: relative;
 	width: 25%;
-	left: 240px;
+	left: 220px;
 	text-align: center;
 }
 
-.main .similarRecommand {
+.main_bottom .evaluate #collectWrapper label,
+.main_bottom .evaluate #ratingWrapper label {
+	cursor: pointer;
+	font-size: 40px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	line-height: 60px;
+	text-align: center;
+	float: left;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	text-shadow: 0 3px 3px #2b3c4e;
+}
+
+.main_bottom .evaluate #collectWrapper label:before,
+.main_bottom .evaluate #ratingWrapper label:before {
+	display: inline;
+	width: auto;
+	height: auto;
+	line-height: normal;
+	vertical-align: baseline;
+	margin-top: 0;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+}
+
+.main_bottom .evaluate #collectWrapper {
+	display: flex;
+}
+
+.main_bottom .evaluate #collectWrapper>div {
+	font-size: 24px;
+	margin-left: 90px;
+	margin-top: 13px;
+}
+
+.main_bottom .evaluate #collectWrapper input {
+	display: none;
+}
+
+.main_bottom .evaluate #collectWrapper label {
+	color: red;
+}
+
+.main_bottom .evaluate #collectWrapper label:hover {
+	font-size: 50px;
+	color: #E85454;
+	text-shadow: 0 0 5px #b9c9d8;
+}
+
+.main_bottom .evaluate #collectWrapper .checked:before {
+	content: "\f004";
+}
+
+.main_bottom .evaluate #collectWrapper .unchecked:before {
+	content: "\f08a";
+}
+
+.main_bottom .evaluate #ratingWrapper {
+	display: inline-block;
+}
+
+.main_bottom .evaluate #ratingWrapper input {
+	display: none;
+}
+
+.main_bottom .evaluate #ratingWrapper label {
+	color: yellow;
+}
+
+.main_bottom .evaluate #ratingWrapper label:hover {
+	font-size: 50px;
+	color: #F5E79E;
+	text-shadow: 0 0 5px #b9c9d8;
+}
+
+.main_bottom .evaluate #ratingWrapper label:before {
+	content: "\f005";
+}
+
+.main_bottom .evaluate #ratingWrapper input:checked+label~label:before {
+	content: "\f006";
+}
+
+.main_bottom .evaluate #evaluation {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.main_bottom .evaluate>.btn {
+	margin-top: 10px;
+}
+
+.main_bottom .similarRecommend {
 	position: relative;
 	display: flex;
 	height: 270px;
@@ -212,31 +316,31 @@ body {
 	left: 320px;
 }
 
-.main .similarRecommand .similarRecommandtxt {
+.main_bottom .similarRecommend .similarRecommendTxt {
 	position: relative;
 	max-height: 20px;
-	width: 500px;
+	width: 400px;
 }
 
-.main .similarRecommand .similarRecommandMovie1,
-.similarRecommandMovie2,
-.similarRecommandMovie3,
-.similarRecommandMovie4 {
+.main_bottom .similarRecommend .similarRecommendMovie1,
+.similarRecommendMovie2,
+.similarRecommendMovie3,
+.similarRecommendMovie4 {
 	position: relative;
 	display: flex;
 	margin: 12px 19px auto 19px;
 }
 
-.main .similarRecommand .similarRecommandMovie1 img,
-.similarRecommandMovie2 img,
-.similarRecommandMovie3 img,
-.similarRecommandMovie4 img {
+.main_bottom .similarRecommend .similarRecommendMovie1 img,
+.similarRecommendMovie2 img,
+.similarRecommendMovie3 img,
+.similarRecommendMovie4 img {
 	width: 120px;
 	height: 160px;
 	border: 1px solid black;
 }
 
-.main .similarRecommand .similarRecommandMovieName {
+.main_bottom .similarRecommend .similarRecommendMovieName {
 	position: absolute;
 	text-align: center;
 	width: 120px;
@@ -245,14 +349,14 @@ body {
 }
 
 
-/*文本超出3行范围用…省略*/
+/*文本超出2行范围用…省略*/
 
-.similarRecommandMovieName {
+.main_bottom .similarRecommend .similarRecommendMovieName {
 	word-break: break-all;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 }
 
@@ -270,6 +374,7 @@ a:hover {
 	position: relative;
 	color: black;
 	top: 9px;
+	text-decoration: none;
 }
 
 a:visited {
