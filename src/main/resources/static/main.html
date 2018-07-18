@@ -17,7 +17,7 @@
 			$(document).ready(function() {
 				$.get("/user", function(data, status) {
 					if(data.uname !== undefined) {
-                        $("#loginState").html("<a>欢迎" + data.uname + "</a><br><a href='/doLogout'>注销</a>");
+                        $("#loginState").html("<a style='padding-top: 15px;'>欢迎" + data.uname + "</a><a style='padding-top: 15px;' href='/doLogout'>&nbsp;|&nbsp;注销</a>");
                         $(".toLogin").hide();
                     }
 					else
@@ -45,14 +45,14 @@
 			<div class="main_top row" id="main_top">
 				<!-- 登录状态 -->
 				<div class="loginState col-xs-3" id="loginState">
-					<a>未登录</a>
-					&nbsp;|&nbsp;
-					<a></a>
+					<a style="padding-top: 15px;">未登录&nbsp;|&nbsp;</a>
+					
+					<a style="padding-top: 15px;"></a>
 				</div>
 				<!-- logo -->
 				<div class="logoBox col-xs-1 col-xs-offset-8" id="logoBox">
 					<img src="image/logo.png" />
-					<h5>湘北团队</h5>
+					<h5 style="padding-top: 10px;">湘北团队</h5>
 				</div>
 			</div>
 			<!-- 登录状态和logo结束 -->
