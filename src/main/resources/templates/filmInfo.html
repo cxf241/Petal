@@ -130,16 +130,16 @@
 					<!--用户对电影的评分-->
 					<h3 id="rateStatus">对该电影评分</h3>
 					<div id="ratingWrapper">
-						<input type="radio" id="star1" name="star" />
-						<label for="star1" onclick="clickStar1()"></label>
-						<input type="radio" id="star2" name="star" />
-						<label for="star2" onclick="clickStar2()"></label>
-						<input type="radio" id="star3" name="star" checked="checked" />
-						<label for="star3" onclick="clickStar3()"></label>
-						<input type="radio" id="star4" name="star" />
-						<label for="star4" onclick="clickStar4()"></label>
-						<input type="radio" id="star5" name="star" />
-						<label for="star5" onclick="clickStar5()"></label>
+						<input type="radio" id="star1" name="star" onclick="clickStar1()" />
+						<label for="star1"></label>
+						<input type="radio" id="star2" name="star" onclick="clickStar2()" />
+						<label for="star2"></label>
+						<input type="radio" id="star3" name="star" onclick="clickStar3()" checked="checked" />
+						<label for="star3"></label>
+						<input type="radio" id="star4" name="star" onclick="clickStar4()" />
+						<label for="star4"></label>
+						<input type="radio" id="star5" name="star" onclick="clickStar5()" />
+						<label for="star5"></label>
 					</div>
 					<div id="evaluation">还行</div>
 					<button class="btn btn-info" id="ratingBtn">提交评分</button>
