@@ -17,7 +17,7 @@
 			$(document).ready(function() {
 				$.get("/user", function(data, status) {
 					if(data.uname !== undefined) {
-                        $("#loginState").html("<a style='padding-top: 15px;'>欢迎" + data.uname + "</a><a style='padding-top: 15px;' href='/doLogout'>&nbsp;|&nbsp;注销</a>");
+                        $("#loginState").html("<a style='padding-top: 15px;' href='userInfo?id=" + data.uid + "'>欢迎" + data.uname + "</a><a style='padding-top: 15px;' href='/doLogout'>&nbsp;|&nbsp;注销</a>");
                         $(".toLogin").hide();
                     }
 					else

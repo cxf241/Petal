@@ -40,7 +40,6 @@ public class LogController {
         User user = new User();
         user.setUname(request.getParameter("uname"));
         user.setUpwd(request.getParameter("upwd"));
-        user.setDName(request.getParameter("dname"));
         if (userService.findUser(user) != null) {
             return false;
         }

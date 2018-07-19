@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/userInfo.css" />
+		<script type="text/javascript" src="/js/userInfo.js"></script>
+		<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function() {
+                $.get("/user", function(data, status) {
+                    if (data.uname === undefined) {//登录状态
+						alert("请登录后查看");
+						window.location.href = "main.html"
+                    }
+                    else {
+                        $("#user").text(data.uname);
+                        $("#name").text("欢迎" + data.uname);
+					}
+                })
+			})
+		</script>
+		<title>用户中心</title>
+	</head>
+	
+	<body>
+		<div class="main">
+			<!-- 用户名和logo -->
+			<div class="main_top row">
+				<!-- 用户名 -->
+				<div class="userInfo col-xs-2">
+					<a id="user"></a>
+				</div>
+
+				<!-- logo -->
+				<div class="logoBox col-xs-2 col-xs-offset-8">
+					<p>花瓣电影</p>
+					<a href="/main.html"><img src="/image/logo.png" /></a>
+				</div>
+			</div>
+			
+			<!-- 用户相关信息 -->
+			<div class="main_bottom">
+				<!-- 标签页导航 -->
+				<ul class="nav nav-stacked">
+					<li class="active infoMenu">
+						<a href="#info" data-toggle="tab">编辑个人信息</a>
+					</li>
+					<li>
+						<a href="#collection" data-toggle="tab">收藏</a>
+					</li>
+					<li>
+						<a href="#gradeHistory" data-toggle="tab">评分记录</a>
+					</li>
+				</ul>
+				
+				<div class="tab-content">
+					<!-- 编辑个人信息 -->
+					<div class="tab-pane fade active in" id="info">
+						<!-- 用户名 -->
+						<div class="userNameBox">
+							<div class="userName">用户名：</div>
+							<div id="name"></div>
+						</div>
+						
+						<!-- 编辑密码 -->
+						<button class="btn btn-success" id="toModifyPasswdBtn" onclick="toModifyPasswd()">修改密码</button>
+						<div class="modifyPasswd hidden" id="modifyPasswd">
+							<div>
+								<div class="passwd">输入原密码：</div>
+								<div class="input-group">
+									<input class="form-control"  type="password" name="passwd" />
+								</div>
+							</div>
+							<div>
+								<div class="passwd">输入新密码：</div>
+								<div class="input-group">
+									<input class="form-control"  type="password" name="newPasswd" />
+								</div>
+							</div>
+							<div>
+								<div class="passwd">确认新密码：</div>
+								<div class="input-group">
+									<input class="form-control"  type="password" name="resureNewPasswd" />
+								</div>
+							</div>
+							<button class="btn btn-success">修改密码</button>
+						</div>
+					</div>
+					
+					<!-- 收藏 -->
+					<div class="tab-pane fade" id="collection">
+						<div class="film"  th:each="collection:${collections}">
+							<a th:attr="href='filmInfo?id=' + ${collection.id}"><img th:attr="src=${collection.url}" /></a>
+							<a th:attr="href='filmInfo?id=' + ${collection.id}" class="filmName" th:text="${collection.name}"></a>
+						</div>
+					</div>
+					
+					<!-- 评分记录 -->
+					<div class="tab-pane fade" id="gradeHistory">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>电影</th>
+									<th>豆瓣评分</th>
+									<th>你的评分</th>
+								</tr>
+							</thead>
+							<tbody th:each="rate:${rates}">
+								<tr>
+									<td><a th:attr="href='filmInfo?id=' + ${rate.id}" th:text="${rate.name}"></a></td>
+									<td th:text="${rate.dScore}"></td>
+									<td th:text="${rate.score}"></td>
+								</tr>
+							</tbody>
+						</table>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

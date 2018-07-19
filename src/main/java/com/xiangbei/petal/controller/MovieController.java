@@ -34,17 +34,17 @@ public class MovieController {
         return movieService.getMovies();
     }
 
-    @RequestMapping("/recommend")
-    @ResponseBody
-    public List<Movie> getRecommend(HttpServletRequest request) {
-        User user = (User)request.getSession().getAttribute("currentUser");
-        List<Integer> list = movieService.getRecommend(userService.findDBUser(user.getDName()));
-        List<Movie> movies = new ArrayList<>();
-        for(Integer i :list) {
-            movies.add(movieService.getMovieById(Integer.toString(i)));
-        }
-        return movies;
-    }
+//    @RequestMapping("/recommend")
+//    @ResponseBody
+//    public List<Movie> getRecommend(HttpServletRequest request) {
+//        User user = (User)request.getSession().getAttribute("currentUser");
+//        List<Integer> list = movieService.getRecommend(userService.findDBUser(user.getDName()));
+//        List<Movie> movies = new ArrayList<>();
+//        for(Integer i :list) {
+//            movies.add(movieService.getMovieById(Integer.toString(i)));
+//        }
+//        return movies;
+//    }
 
     @RequestMapping("searchResult")
     public String getMovieByKeyWordPage(@RequestParam(name="keyWord")String keyWord, @RequestParam(name="page", defaultValue="1")int page, Map<String,Object> map) {

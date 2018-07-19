@@ -55,8 +55,7 @@ function doRegister() {
 		url: "/doRegister", //url
 		data: {
 			uname: name.value,
-			upwd: pwd1.value,
-			dname: dname.value
+			upwd: pwd1.value
 		},
 		success: function(result) {
 			if(data == true) {

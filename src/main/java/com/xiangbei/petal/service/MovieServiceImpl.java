@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class MovieServiceImpl implements MovieService {
@@ -44,19 +45,43 @@ public class MovieServiceImpl implements MovieService {
         movieType = movieType.trim();
         String[] types = movieType.split("\\s+");
         // 列表用于存储记录
-        List<Movie> records = new ArrayList<>();
+        List<Movie> temp = new ArrayList<>();
         int i = 0;
         for (Movie movie : movieDao.getAllMovie()) {
+            if (movie.getId() == id)
+                break;
             String type = movie.getType();
             for(String t:types){
                 if(type.contains(t)){
-                    records.add(movieDao.getMovieById(movie.getId()));
+                    temp.add(movieDao.getMovieById(movie.getId()));
                     i++;
                     break;
                 }
             }
-            if (i > 3)
+            if (i > 9)
                 break;
+        }
+
+        List<Movie> records = new ArrayList<>();
+
+        //生成随机10个数
+        Random rd = new Random();
+        int NUM = 10;
+        int[] rds = new int[NUM];
+        List<Integer> lst = new ArrayList<>();
+        int index;
+        for(i = 0;i < NUM; i++){
+            lst.add(i);
+        }
+        for(i = 0;i < NUM; i++){
+            index=rd.nextInt(NUM-i);
+            rds[i]=lst.get(index);
+            lst.remove(index);
+        }
+
+        for(int j = 0; j < 4; j++) {
+            index = rds[j];
+            records.add(temp.get(index));
         }
         return records;
     }
