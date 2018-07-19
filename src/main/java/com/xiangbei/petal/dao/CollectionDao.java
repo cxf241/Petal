@@ -11,7 +11,6 @@ import java.util.List;
 public interface CollectionDao {
     //获取用户所有收藏电影
     @Select("SELECT movieid FROM collection WHERE userId=${uId}")
-    @ResultType(Collection.class)
     List<Integer> getAllCollections(@Param("uId")int uId);
 
     //查询用户是否收藏电影

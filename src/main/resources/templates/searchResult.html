@@ -11,8 +11,10 @@
 		<script>
             $(document).ready(function() {
                 $.get("/user", function(data, status) {
-                    if(data.uname !== undefined)
+                    if(data.uname !== undefined) {
+                        $("#user").attr("href", "userInfo?id=" + data.uid);
                         $("#user").text(data.uname);
+                    }
                 })
             })
 		</script>

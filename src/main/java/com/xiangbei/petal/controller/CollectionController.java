@@ -1,7 +1,6 @@
 package com.xiangbei.petal.controller;
 
 import com.xiangbei.petal.service.CollectionService;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

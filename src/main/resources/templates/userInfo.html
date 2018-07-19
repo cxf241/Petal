@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/userInfo.css" />
-		<script type="text/javascript" src="js/userInfo.js"></script>
-		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-		<title>用户1</title>
+		<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/userInfo.css" />
+		<script type="text/javascript" src="/js/userInfo.js"></script>
+		<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function() {
+                $.get("/user", function(data, status) {
+                    if (data.uname === undefined) {//登录状态
+						alert("请登录后查看");
+						window.location.href = "main.html"
+                    }
+                    else {
+                        $("#user").text(data.uname);
+                        $("#name").text("欢迎" + data.uname);
+					}
+                })
+			})
+		</script>
+		<title>用户中心</title>
 	</head>
 	
 	<body>
@@ -16,7 +30,7 @@
 			<div class="main_top row">
 				<!-- 用户名 -->
 				<div class="userInfo col-xs-2">
-					<a id="user">用户1</a>
+					<a id="user"></a>
 				</div>
 
 				<!-- logo -->
@@ -47,7 +61,7 @@
 						<!-- 用户名 -->
 						<div class="userNameBox">
 							<div class="userName">用户名：</div>
-							<div id="name">用户1</div>
+							<div id="name"></div>
 						</div>
 						
 						<!-- 编辑密码 -->
@@ -77,49 +91,10 @@
 					
 					<!-- 收藏 -->
 					<div class="tab-pane fade" id="collection">
-						<!-- 第一行 -->
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg" /></a>
-							<a href="#" class="filmName">头号玩家</a>
+						<div class="film"  th:each="collection:${collections}">
+							<a th:attr="href='filmInfo?id=' + ${collection.id}"><img th:attr="src=${collection.url}" /></a>
+							<a th:attr="href='filmInfo?id=' + ${collection.id}" class="filmName" th:text="${collection.name}"></a>
 						</div>
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523632248.jpg" /></a>
-							<a href="#" class="filmName">厕所英雄厕所英雄厕所英雄厕所英雄</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516914607.jpg" /></a>
-							<a href="#" class="filmName">湮灭</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2507572275.jpg" /></a>
-							<a href="#" class="filmName">无问西东</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2514384737.jpg" /></a>
-							<a href="#" class="filmName">现在去见你</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2522339208.jpg" /></a>
-							<a href="#" class="filmName">白牙</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2512933684.jpg" /></a>
-							<a href="#" class="filmName">环太平洋：雷霆再起起起起起起起起起起起起起起起起起起起起起起起起起起</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg" /></a>
-							<a href="#" class="filmName">奇迹男孩</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2512933684.jpg" /></a>
-							<a href="#" class="filmName">环太平洋：雷霆再起起起起起起起起起起起起起起起起起起起起起起起起起起</a>
-						</div>
-						<div class="film">
-							<a href="#"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg" /></a>
-							<a href="#" class="filmName">奇迹男孩</a>
-						</div>
-						
-						
 					</div>
 					
 					<!-- 评分记录 -->
@@ -132,86 +107,11 @@
 									<th>你的评分</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody th:each="rate:${rates}">
 								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
-								</tr>
-								<tr>
-									<td><a href="#" id="gradeFilmName">环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起环太平洋：雷霆再起</a></td>
-									<td>5.5</td>
-									<td>??</td>
+									<td><a th:attr="href='filmInfo?id=' + ${rate.id}" th:text="${rate.name}"></a></td>
+									<td th:text="${rate.dScore}"></td>
+									<td th:text="${rate.score}"></td>
 								</tr>
 							</tbody>
 						</table>

@@ -15,6 +15,7 @@
 				$.get("/user", function(data, status) {
 					if(data.uname !== undefined) {//登录状态
                         $("#user").text(data.uname);
+                        $("#user").attr("href","userInfo?id=" + data.uid);
                         document.getElementById("user").setAttribute("name", data.uid);
                         //判定是否评分
                         $.post("/rated",
