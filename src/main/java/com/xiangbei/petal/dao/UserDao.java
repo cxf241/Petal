@@ -1,10 +1,7 @@
 package com.xiangbei.petal.dao;
 
 import com.xiangbei.petal.pojo.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.ResultType;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,9 +19,8 @@ public interface UserDao {
     @ResultType(User.class)
     List<User> findUser(User user);
 
-    //查找豆瓣用户id
-    @Select("SELECT id FROM banuser WHERE name like binary(#{name})")
-    @ResultType(int.class)
-    List<Integer> findDBUser(String name);
+
+    @Update("UPDATE user SET upwd=#{upwd} WHERE uid=#{uid}")
+    int changeUser(User user);
 
 }

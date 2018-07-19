@@ -60,4 +60,11 @@ public class LogController {
     public User getCurrentUser(HttpServletRequest request) {
         return (User)request.getSession().getAttribute("currentUser");
     }
+
+    @RequestMapping(value = "changePwd")
+    public boolean changePassWord(HttpServletRequest request, HttpServletResponse response) {
+        User user = (User)request.getSession().getAttribute("currentUser");
+        user.setUpwd(request.getParameter("upwd"));
+        return userService.changeUser(user);
+    }
 }

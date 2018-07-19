@@ -16,10 +16,46 @@
                     }
                     else {
                         $("#user").text(data.uname);
-                        $("#name").text("欢迎" + data.uname);
+                        $("#name").text(data.uname);
 					}
                 })
 			})
+		</script>
+		<script>
+			function changePwd(){
+			    var password = $("#password").val();
+			    var newPassword1 = $("#newPassword1").val();
+			    var newPassword2 = $("#newPassword2").val();
+
+			    if (password == "" || newPassword1 == "" || newPassword2 == "") {
+			        alert("请输入所有信息！");
+			        return;
+				}
+
+				if (newPassword1 != newPassword2) {
+			        alert("两次输入不一致！");
+                    return;
+				}
+				//判定原来密码
+                $.post("/doLogin", {
+                        uname: $("#user").text(),
+                        upwd: password
+                    },
+                    function(data, status) {
+                        if(data == true) {
+                            $.post("/changePwd", {
+                                upwd: newPassword1
+                            }, function (data, status) {
+                                if (data == true){
+                                    alert("修改成功！");
+                                    window.location.reload();
+                                }
+                            });
+                        } else {
+                            alert("原密码输入错误！");
+                        }
+                    });
+			}
 		</script>
 		<title>用户中心</title>
 	</head>
@@ -70,22 +106,22 @@
 							<div>
 								<div class="passwd">输入原密码：</div>
 								<div class="input-group">
-									<input class="form-control"  type="password" name="passwd" />
+									<input class="form-control"  type="password" name="passwd" id="password"/>
 								</div>
 							</div>
 							<div>
 								<div class="passwd">输入新密码：</div>
 								<div class="input-group">
-									<input class="form-control"  type="password" name="newPasswd" />
+									<input class="form-control"  type="password" name="newPasswd" id="newPassword1"/>
 								</div>
 							</div>
 							<div>
 								<div class="passwd">确认新密码：</div>
 								<div class="input-group">
-									<input class="form-control"  type="password" name="resureNewPasswd" />
+									<input class="form-control"  type="password" name="resureNewPasswd" id="newPassword2" />
 								</div>
 							</div>
-							<button class="btn btn-success">修改密码</button>
+							<button class="btn btn-success" onclick="changePwd()">修改密码</button>
 						</div>
 					</div>
 					

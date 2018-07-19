@@ -57,7 +57,7 @@ function doRegister() {
 			uname: name.value,
 			upwd: pwd1.value
 		},
-		success: function(result) {
+		success: function(data) {
 			if(data == true) {
 				alert("注册成功！");
 				name.value = "";

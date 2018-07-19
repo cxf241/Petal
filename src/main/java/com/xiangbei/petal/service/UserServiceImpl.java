@@ -24,10 +24,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public int findDBUser(String name) {
-        if (userDao.findDBUser(name).size() > 0)
-            return userDao.findDBUser(name).get(0);
-        else
-            return 0;
+    public boolean changeUser(User user) {
+        return userDao.changeUser(user) > 0;
     }
 }
