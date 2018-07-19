@@ -14,7 +14,7 @@ import java.util.List;
 public interface UserDao {
 
     //加入新用户
-    @Insert("INSERT INTO user(uname,upwd,dname) VALUES(#{uname},#{upwd},#{dname})")
+    @Insert("INSERT INTO user(uname,upwd) VALUES(#{uname},#{upwd})")
     int addUser(User user);
 
     //查找用户

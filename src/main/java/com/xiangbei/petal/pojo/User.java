@@ -1,9 +1,9 @@
 package com.xiangbei.petal.pojo;
 
 public class User {
-    private String dname;
     private String uname;
     private String upwd;
+    private String uid;
 
     public String getUname() {
         return uname;
@@ -20,12 +20,11 @@ public class User {
     public void setUpwd(String upwd) {
         this.upwd = upwd;
     }
-
-    public String getDName() {
-        return dname;
+    public String getUid() {
+        return uid;
     }
 
-    public void setDName(String dname) {
-        this.dname = dname;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

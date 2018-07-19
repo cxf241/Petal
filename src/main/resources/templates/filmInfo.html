@@ -10,13 +10,85 @@
 		<link rel="stylesheet" type="text/css" href="css/filmInfo.css" />
 		<script src="bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
 		<script src="js/filmInfo.js"></script>
-		<script>
+		<script th:inline="javascript">
 			$(document).ready(function() {
 				$.get("/user", function(data, status) {
-					if(data.uname !== undefined)
-						$("#user").text(data.uname);
-				})
-			})
+					if(data.uname !== undefined) {//登录状态
+                        $("#user").text(data.uname);
+                        document.getElementById("user").setAttribute("name", data.uid);
+                        //判定是否评分
+                        $.post("/rated",
+                            {
+                                uId: data.uid,
+                                movieId: parseInt([[${movie.id}]])
+                            },function(data, status){
+                            	if(data > 0) {
+                                    changeStar(data);
+                                    disabledStar();
+                                    $("#ratingBtn").hide();
+                                }
+                            }
+                        );
+                        //判定是否收藏
+						$.post("/collected",{
+						    	uId: data.uid,
+								movieId: parseInt([[${movie.id}]])
+							}
+							,function(data, status) {
+						    	if (data==true) {
+						    	    collected = true;
+						    	    $(".heart").removeClass("unchecked");
+						    	   	$(".heart").addClass("checked");
+								}
+							}
+						);
+					}
+					else {//未登录
+                        document.getElementById("ratingBtn").onclick =
+							function (){
+                            	alert("请登录后评分！");
+                        	};
+                        $('#heart').attr("disabled", true);
+                        }
+					})
+				});
+		</script>
+
+		<script th:inline="javascript">
+			function doRate() {
+			    $.post("/doRate", {
+			        uId: parseInt(document.getElementById("user").getAttribute("name")),
+					movieId: parseInt([[${movie.id}]]),
+					score: score
+
+				}, function(data, status) {
+			        if(data==true) {
+			            alert("评分成功！");
+                        disabledStar();
+                        $("#ratingBtn").hide();
+					}
+				});
+			}
+
+			function doCollect() {
+                $.post("/doCollect", {
+                    collected: collected,
+                    uId: parseInt(document.getElementById("user").getAttribute("name")),
+                    movieId: parseInt([[${movie.id}]])
+                }, function(data, status) {
+                    if(data==true) {
+                        if (collected == true) {
+                            collected = false;
+                            alert("取消收藏成功！");
+						}
+						else{
+                            collected = true;
+                            alert("收藏成功！");
+						}
+                    }
+                });
+                clickHeart();
+			}
 		</script>
 	</head>
 
@@ -26,7 +98,7 @@
 			<div class="main_top row">
 				<!-- 用户信息 -->
 				<div class="userInfo col-xs-2">
-					<a id="user">未登录</a>
+					<a id="user" name="">未登录</a>
 				</div>
 
 				<!-- logo -->
@@ -124,8 +196,8 @@
 					<!--收藏该电影-->
 					<div id="collectWrapper">
 						<div>收藏该电影</div>
-						<input type="radio" id="heart" name="heart" />
-						<label class="heart unchecked" for="heart" onclick="clickHeart()"></label>
+						<input type="radio" id="heart" name="heart" onclick="doCollect()"/>
+						<label class="heart unchecked" for="heart" ></label>
 					</div>
 					<!--用户对电影的评分-->
 					<h3 id="rateStatus">对该电影评分</h3>
@@ -142,7 +214,7 @@
 						<label for="star5"></label>
 					</div>
 					<div id="evaluation">还行</div>
-					<button class="btn btn-info" id="ratingBtn">提交评分</button>
+					<button class="btn btn-info" id="ratingBtn" onclick="doRate()">提交评分</button>
 				</div>
 				
 				<!--相似电影-->
