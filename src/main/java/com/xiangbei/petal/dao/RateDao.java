@@ -21,4 +21,8 @@ public interface RateDao {
     //查询某个用户对单个电影的评分
     @Select("SELECT score FROM rate WHERE userid=${uId} AND movieId=${movieId}")
     Double getRate(@Param("uId")int uId, @Param("movieId")int movieId);
+
+    @Select("SELECT * FROM rate")
+    @ResultType(Rate.class)
+    List<Rate> getRates();
 }

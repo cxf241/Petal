@@ -54,6 +54,146 @@
 
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.2.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>scala-library</artifactId>
+					<groupId>org.scala-lang</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>guava</artifactId>
+					<groupId>com.google.guava</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>netty</artifactId>
+					<groupId>io.netty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-math3</artifactId>
+					<groupId>org.apache.commons</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>avro</artifactId>
+					<groupId>org.apache.avro</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-net</artifactId>
+					<groupId>commons-net</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>scala-reflect</artifactId>
+					<groupId>org.scala-lang</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>paranamer</artifactId>
+					<groupId>com.thoughtworks.paranamer</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>objenesis</artifactId>
+					<groupId>org.objenesis</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jackson-mapper-asl</artifactId>
+					<groupId>org.codehaus.jackson</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>activation</artifactId>
+					<groupId>javax.activation</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jackson-core-asl</artifactId>
+					<groupId>org.codehaus.jackson</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-collections</artifactId>
+					<groupId>commons-collections</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang</artifactId>
+					<groupId>commons-lang</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-mllib_2.11</artifactId>
+			<version>2.2.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>snappy-java</artifactId>
+					<groupId>org.xerial.snappy</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-compiler</artifactId>
+					<groupId>org.codehaus.janino</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>scala-library</artifactId>
+					<groupId>org.scala-lang</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.11.8</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.thoughtworks.paranamer/paranamer -->
+		<dependency>
+			<groupId>com.thoughtworks.paranamer</groupId>
+			<artifactId>paranamer</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.janino/janino -->
+		<dependency>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+			<version>2.7.8</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
