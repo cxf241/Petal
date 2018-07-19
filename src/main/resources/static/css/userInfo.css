@@ -112,15 +112,15 @@ body {
 	overflow-y: auto;
 }
 
-.main_bottom .tab-content #info .modifyUserName {
+.main_bottom .tab-content #info .userNameBox {
 	position: relative;
 	margin-top: 40px;
 	width: 600px;
-	height: 150px;
+	height: 100px;
 	display: flex;
 }
 
-.main_bottom .tab-content #info .modifyUserName .userName {
+.main_bottom .tab-content #info .userNameBox .userName {
 	position: relative;
 	width: 200px;
 	margin-top: 20px;
@@ -128,30 +128,10 @@ body {
 	text-align: center;
 }
 
-.main_bottom .tab-content #info .modifyNameBox {
+.main_bottom .tab-content #info .userNameBox #name {
 	position: relative;
-	width: 400px;
-}
-
-.main_bottom .tab-content #info .modifyNameBox .input-group {
-	margin-top: 15px;
-	display: flex;
-}
-
-.main_bottom .tab-content #info .modifyNameBox .input-group .btn {
-	margin-left: 50px;
-	margin-top: 0;
-}
-
-.main_bottom .tab-content #info .modifyNameBox .input-group input {
-	width: 300px;
+	margin-top: 20px;
 	font-size: 22px;
-	height: 40px;
-	border-radius: 5px;
-}
-
-.main_bottom .tab-content #info .modifyNameBox .btn {
-	margin-top: 15px;
 }
 
 .main_bottom .tab-content #toModifyPasswdBtn {
