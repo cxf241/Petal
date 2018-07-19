@@ -29,7 +29,9 @@ body {
 	z-index: -1;
 }
 
+
 /*用于搜索框,与用于登录框区分*/
+
 .main_hide2 {
 	filter: blur(1.5px);
 	opacity: 0.3;
@@ -48,7 +50,9 @@ body {
 	z-index: -1;
 }
 
+
 /*用于搜索框,与用于登录框区分*/
+
 .loginScene_hide2 {
 	filter: blur(1.5px);
 	opacity: 0.3;
@@ -67,9 +71,10 @@ body {
 	margin-bottom: 100px;
 	padding: 0;
 	height: 60px;
-	border: 2px solid;
-    border-radius: 5px;
-    background-color: #a3c6ab;
+	/*border: 2px solid;*/
+	/*border-radius: 5px;*/
+	/*opacity: 0.7;
+	background-color: lightgrey;*/
 }
 
 .main .main_top .loginState {
@@ -81,7 +86,8 @@ body {
 
 .main .main_top .loginState a {
 	text-decoration: none;
-	color: #000000;
+	color: #ffffff;
+	font-family: "微软雅黑";
 }
 
 .main .main_top .logoBox {
@@ -98,8 +104,9 @@ body {
 }
 
 .main .main_top .logoBox h5 {
-	font-family: "仿宋";
-	color: #000000;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #ffffff;
 }
 
 .main .main_medium {
@@ -360,23 +367,19 @@ body {
 }
 
 .loginScene .login_registerBox #registerNameBox {
-	top: 20px;
-}
-
-.loginScene .login_registerBox #doubanNameBox {
-	top: 40px;
+	top: 50px;
 }
 
 .loginScene .login_registerBox #registerPasswdBox {
-	top: 60px;
+	top: 85px;
 }
 
 .loginScene .login_registerBox #resurePasswdBox {
-	top: 80px;
+	top: 120px;
 }
 
 .loginScene .login_registerBox #registerBtnBox {
-	top: 100px;
+	top: 155px;
 }
 
 
