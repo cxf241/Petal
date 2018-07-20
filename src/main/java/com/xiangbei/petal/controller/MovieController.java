@@ -39,7 +39,7 @@ public class MovieController {
     @RequestMapping("/recommend")
     @ResponseBody
     public List<String> getRecommend(HttpServletRequest request) {
-        return Pre.getRecommend(als.model,5,5);
+        return Pre.getRecommend(als.model,1,5);
     }
 
     @RequestMapping("searchResult")
