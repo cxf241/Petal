@@ -25,7 +25,7 @@ public class sql {
 		 Properties connectionProperties = new Properties();
 		 connectionProperties.setProperty("dbtable", table);
 		 connectionProperties.setProperty("user", "root");
-		 connectionProperties.setProperty("password", "123456");
+		 connectionProperties.setProperty("password", "tracer");
 		 connectionProperties.put("driver", "com.mysql.jdbc.Driver");
 
 		 // 读取数据
