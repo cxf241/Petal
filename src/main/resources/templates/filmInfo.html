@@ -220,12 +220,7 @@
 				
 				<!--相似电影-->
 				<div class="similarRecommend">
-					<h3 class="similarRecommendTxt">喜欢这部电影的人也喜欢：</h3>
-					<!--相似电影1-->
-					<!--<div class="similarRecommendMovie1">-->
-						<!--<a href="filmInfo?id=26654498"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2523592367.webp" /></a>-->
-						<!--<a href="filmInfo?id=26654498" class="similarRecommendMovieName">爱你，西蒙</a>-->
-					<!--</div>-->
+					<div class="similarRecommendTxt">喜欢这部电影的人也喜欢：</div>
 					<div class="similarRecommendMovie1">
 						<a th:attr="href='filmInfo?id=' + ${recommends.get(0).id}"><img th:attr="src=${recommends.get(0).url}"></a>
 						<a th:attr="href='filmInfo?id=' + ${recommends.get(0).id}" class="similarRecommendMovieName" th:text="${recommends.get(0).name}"></a>
