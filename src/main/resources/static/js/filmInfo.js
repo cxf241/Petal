@@ -1,3 +1,8 @@
+/*
+ *
+	作者：李汉杨
+ *
+*/
 var score = 3.0;
 var collected = false;
 function clickHeart() {

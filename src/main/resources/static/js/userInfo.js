@@ -1,3 +1,8 @@
+/*
+ *
+	作者：李汉杨
+ *
+*/
 function toModifyPasswd() {
 	var toModifyPasswdBtn = document.getElementById('toModifyPasswdBtn');
 	toModifyPasswdBtn.classList.add('hidden');

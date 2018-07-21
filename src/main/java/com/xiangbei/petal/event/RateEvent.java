@@ -1,3 +1,7 @@
+/*
+ * @author：陈旭峰
+ *
+ */
 package com.xiangbei.petal.event;
 
 import org.apache.spark.mllib.recommendation.Rating;

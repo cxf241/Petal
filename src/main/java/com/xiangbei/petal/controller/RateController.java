@@ -1,6 +1,10 @@
+/*
+ * 作者：陈旭峰
+ *
+ */
+
 package com.xiangbei.petal.controller;
 
-import com.xiangbei.petal.PetalApplication;
 import com.xiangbei.petal.event.RateEvent;
 import com.xiangbei.petal.pojo.Movie;
 import com.xiangbei.petal.pojo.Rate;

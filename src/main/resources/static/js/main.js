@@ -1,3 +1,8 @@
+/*
+ *
+	作者：李汉杨，陈旭峰
+ *
+*/
 function Login() {
 	var main = document.getElementById('main');
 	main.classList.add('main_hide');

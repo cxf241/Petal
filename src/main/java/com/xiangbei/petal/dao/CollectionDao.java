@@ -1,3 +1,7 @@
+/*
+ * @author：陈旭峰
+ *
+ */
 package com.xiangbei.petal.dao;
 
 import com.xiangbei.petal.pojo.Collection;

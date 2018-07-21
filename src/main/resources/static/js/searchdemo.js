@@ -1,3 +1,8 @@
+/*
+ * 引用自http://sc.chinaz.com/jiaoben/170213264020.htm
+ *
+ */
+
 (function(window) {
 
 	'use strict';
