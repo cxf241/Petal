@@ -1,12 +1,16 @@
 package com.xiangbei.petal.controller;
 
+import com.xiangbei.petal.PetalApplication;
+import com.xiangbei.petal.event.RateEvent;
 import com.xiangbei.petal.pojo.Movie;
 import com.xiangbei.petal.pojo.Rate;
 import com.xiangbei.petal.pojo.Record;
 import com.xiangbei.petal.service.CollectionService;
 import com.xiangbei.petal.service.MovieService;
 import com.xiangbei.petal.service.RateService;
+import org.apache.spark.mllib.recommendation.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +30,8 @@ public class RateController {
     @Autowired
     MovieService movieService;
 
+    @Autowired
+    ApplicationContext context;
     @RequestMapping(value = "doRate",method = RequestMethod.POST)
     @ResponseBody
     public boolean addRate(@RequestParam("uId")int uId, @RequestParam("movieId")int movieId, @RequestParam("score")double score) {
@@ -33,6 +39,7 @@ public class RateController {
         rate.setuId(uId);
         rate.setMovieId(movieId);
         rate.setScore(score);
+        context.publishEvent(new RateEvent(this, new Rating(uId, movieId, score)));
         return rateService.addRate(rate) > 0;
     }
 

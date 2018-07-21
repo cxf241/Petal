@@ -27,4 +27,5 @@ public class SparkConfig implements Serializable{
         sc = new JavaSparkContext(sparkConf);
 
     }
+
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.mllib.recommendation.ALS;
+import org.apache.spark.mllib.recommendation.MatrixFactorizationModel;
 import org.apache.spark.mllib.recommendation.Rating;
 
 /**
@@ -14,15 +16,19 @@ import org.apache.spark.mllib.recommendation.Rating;
  */
 public class Union extends SparkConfig  implements Runnable ,Serializable {
 
-    private Rating rating = null;
+    public static Rating rating = null;
+    public static MatrixFactorizationModel model;
 
     public Union() {
         super();
     }
-    public void setRating(Rating rating) {
-        this.rating=rating;
-    }
+
     public void run() {
+
+        int rank = 10;
+        int numIterations = 10;
+        double alpha = 0.01;
+        model = ALS.train(JavaRDD.toRDD(ratings), rank, numIterations, alpha);
 
     }
 
@@ -30,12 +36,21 @@ public class Union extends SparkConfig  implements Runnable ,Serializable {
         return ratings;
     }
 
-    public  JavaRDD<Rating> join(Rating rating){
+    public  void join(Rating rating){
+        long startTime = System.currentTimeMillis();
         List<Rating> list = new ArrayList<>();
         list.add(rating);
+
         JavaRDD<Rating> newRating = sc.parallelize(list);
-        SparkConfig.ratings  = SparkConfig.ratings.union(newRating);
-        return  SparkConfig.ratings ;
+        ratings  = ratings.union(newRating);
+
+        int rank = 10;
+        int numIterations = 10;
+        double alpha = 0.01;
+        model = ALS.train(JavaRDD.toRDD(ratings), rank, numIterations, alpha);
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime-startTime);
+        //return ratings ;
     }
 
 }

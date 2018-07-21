@@ -5,6 +5,7 @@ import com.xiangbei.petal.pojo.User;
 import com.xiangbei.petal.service.MovieService;
 import com.xiangbei.petal.service.UserService;
 import com.xiangbei.petal.spark.Pre;
+import com.xiangbei.petal.spark.Union;
 import com.xiangbei.petal.spark.als;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,8 +39,13 @@ public class MovieController {
 
     @RequestMapping("/recommend")
     @ResponseBody
-    public List<String> getRecommend(HttpServletRequest request) {
-        return Pre.getRecommend(als.model,1,5);
+    public List<Movie> getRecommend(HttpServletRequest request) {
+        User user = (User)request.getSession().getAttribute("currentUser");
+        List<String> list = Pre.getRecommend(Union.model, Integer.parseInt(user.getUid()), 16);
+        List<Movie> movies = new ArrayList<>();
+        for(String str: list)
+            movies.add(movieService.getMovieById(str));
+        return movies;
     }
 
     @RequestMapping("searchResult")

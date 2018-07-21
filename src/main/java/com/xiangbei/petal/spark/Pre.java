@@ -72,9 +72,9 @@ public class Pre {
 		JavaRDD<Rating> ratings = row.map(
 				new Function<Row,Rating>(){
 					public Rating call(Row row) throws Exception{
-						double rating = (double) row.get(0);
-						int user = (int) row.get(1);
-						int movie = (int) row.get(2);
+						double rating = (double) row.get(2);
+						int user = (int) row.get(0);
+						int movie = (int) row.get(1);
 
 						return new Rating(user,movie,rating);
 					}

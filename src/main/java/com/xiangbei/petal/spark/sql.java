@@ -20,16 +20,16 @@ public class sql {
 		 SQLContext sqlContext = new SQLContext(sc);
 		 
 		 //设置数据库登录信息
-		 String url = "jdbc:mysql://localhost:3306/petal";
-		 String table = "rating";
+		 String url = "jdbc:mysql://139.199.173.43:3306/petal";
+		 String table = "rate";
 		 Properties connectionProperties = new Properties();
 		 connectionProperties.setProperty("dbtable", table);
 		 connectionProperties.setProperty("user", "root");
-		 connectionProperties.setProperty("password", "tracer");
+		 connectionProperties.setProperty("password", "123456");
 		 connectionProperties.put("driver", "com.mysql.jdbc.Driver");
 
 		 // 读取数据
-		 Dataset<Row> jdbcDF = sqlContext.read().jdbc(url, table, connectionProperties).select("*");
+		 Dataset<Row> jdbcDF = sqlContext.read().jdbc(url, table, connectionProperties).select("*").limit(1000);
 		 
 		 //打印表结构
 		 //jdbcDF.printSchema();

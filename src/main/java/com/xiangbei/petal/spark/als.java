@@ -30,22 +30,22 @@ import org.apache.spark.sql.Row;
 public class als {
 
 
-	public static MatrixFactorizationModel model;
+	//public static MatrixFactorizationModel model;
 	public static Union union;
 
 
-	public static void Init(List<Rating> list){
+	public static void Init(){
 
 		// 创建一个Runnable实现类的对象
-		Union union = new Union();
+		union = new Union();
 
-		union.ratings = union.sc.parallelize(list);
+		union.ratings = Pre.getRating(union.sc);
 
 		Thread thread = new Thread(union);
 		thread.start();
 
 
-		model = Pre.getModel(union.getRatings());
+		//union.model = Pre.getModel(union.getRatings());
 
 		//关闭JavaSparkContext，推荐结束
 		//union.sc.close();
@@ -55,7 +55,7 @@ public class als {
 
 		union.join(rating);
 
-		model = Pre.getModel(union.getRatings());
+		//Pre.getModel(union.getRatings());
 
 		//关闭JavaSparkContext，推荐结束
 		//union.sc.close();
